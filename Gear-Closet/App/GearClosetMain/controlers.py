@@ -1,3 +1,4 @@
+import os, json
 from GCDatabaseMangment.InventroyForms import AddGeartoInv
 from flask import  request, redirect, url_for, \
      render_template, flash,Blueprint, jsonify
@@ -53,8 +54,27 @@ def add_numbers():
 
 @GCInv.route('/')
 def index():
+    # print(os.getcwd())
+    # with open(os.getcwd() + '/tests/inventoryGC.json') as data_file:
+    #     data = json.load(data_file)
+    # for item in data['data'].values():
+    #     temp = Inventory(item)
+    #     db.session.add(temp)
+    #     db.session.commit()
     return render_template('testAJAX.html')
 
 @GCInv.route("/table")
 def table():
     return render_template('testTable.html')
+
+@GCInv.route("/side")
+def side():
+    return render_template('sideBarTest.html')
+
+@GCInv.route("/itemPopUp")
+def itemPopUp():
+    return render_template("testPop.html")
+
+@GCInv.route("/42")
+def fortytwo():
+    return jsonify(42)

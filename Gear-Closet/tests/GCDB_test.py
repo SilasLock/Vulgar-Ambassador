@@ -1,4 +1,5 @@
 import unittest, os, datetime, json
+from flask import jsonify
 from copy import deepcopy
 from flask_testing import TestCase
 from GCDatabaseMangment.InventroyForms import AddGeartoInv
@@ -109,7 +110,10 @@ class Database_Use_Tests(TestCase):
 
         :return:
         """
-        pass
+        checoutItemName = "Water Jug (7 gal) Green"
+        checkOutItem = Inventory.query.filter_by(itemName=checoutItemName).first()
+        print(jsonify(checkOutItem.serialize))
+        self.assertEqual(True, True)
     def test_checkInItemFromInventoryProcessing(self):
         """
 

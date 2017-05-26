@@ -1,7 +1,7 @@
-import os
-
+import os, json
+from GCDatabaseMangment.GCDBSchema import Inventory
 from App.GearClosetMain.controlers import GCInv
-from App.InventoryEditor.controlers import InvEditor
+from App.InventoryMangment.controlers import InvMangment
 from flask import Flask
 from flask_bootstrap import Bootstrap
 
@@ -20,5 +20,5 @@ with app.app_context():
 
 
 app.register_blueprint(GCInv)
-app.register_blueprint(InvEditor, url_prefix='/edit')
+app.register_blueprint(InvMangment, url_prefix='/edit')
 # print(app.url_map)

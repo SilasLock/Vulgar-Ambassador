@@ -22,6 +22,19 @@ class Inventory(db.Model):
         self.price = form['itemPrice']
         self.category = form['itemCategory']
         self.processing = form['itemProcessingRequired']
+#https://stackoverflow.com/questions/7102754/jsonify-a-sqlalchemy-result-set-in-flask?noredirect=1&lq=1
+    @property
+    def serialize(self):
+        """Return object data in easily serializeable format"""
+        return {
+            'id': self.id,
+            'itemName': "<div '><a class='itemName' href='#'>" + self.itemName + "</a></div>",
+            'itemQuantity': self.quantityAvailable,
+            'itemQuantityOut': self.quantityOut,
+            'itemPrice' : self.price,
+            'itemCatagory' : self.category,
+            'itemProcessingRequired' : self.processing
+            }
 
 
 #TODO: working on Inv and Checkedout rlationship http://docs.sqlalchemy.org/en/latest/orm/basic_relationships.html#one-to-one
