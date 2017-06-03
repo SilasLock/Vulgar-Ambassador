@@ -1,6 +1,7 @@
 from flask import  request, redirect, url_for, \
      render_template, flash,Blueprint, jsonify
 from GCDatabaseMangment.GCDBSchema import db, Inventory, Processing, Client, Category, checkedOut
+from GCDatabaseMangment.InventroyForms import Checkout
 
 InvMangment = Blueprint('InvEditor', __name__, template_folder='templates')
 
@@ -44,6 +45,16 @@ def addCatagoty():
 @InvMangment.route("/getInv")
 def getInv():
     invList = Inventory.query.all()
-    return jsonify(records=[i.serialize for i in invList])
+    return jsonify(records=[i.serializeTable for i in invList])
                    #, totalRecordCount=len(invList), queryRecordCount=len(invList))
 
+@InvMangment.route("/getItem/<int:itemID>")
+def getItem(itemID):
+    form = Checkout()
+    item = Inventory.query.filter_by(id=itemID).first()
+    return render_template("testPop.html", item=item, form=form)
+    # return jsonify(Inventory.query.filter_by(id=itemID).first().serializePopUp)
+
+@InvMangment.route("/addItemToPack")
+def checkoutForm():
+    return '<div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>'

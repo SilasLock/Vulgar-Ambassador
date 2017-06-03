@@ -1,11 +1,40 @@
-<ul class="message-popup-list">
-    <li>
-        <a href="user.html" class="user-thumb"><img src="http://www.zerohedge.com/sites/default/files/images/user230519/imageroot/Obama%20Laughing_2.jpg" /></a>
-        <div class="popup-messages">
-            <div class="popup-message-item">Hello</div>
+<!--<div class="row no-gutters">-->
+  <!--<div class="col-12 col-sm-6 col-md-8">.col-12 .col-sm-6 .col-md-8</div>-->
+  <!--<div class="col-6 col-md-4">.col-6 .col-md-4</div>-->
+<!--</div>-->
+<div class="modal-header">
+    <button type="button" class="close"  data-dismiss="modal" aria-label="Close" class="message-popup-close" >
+        <span aria-hidden="true">&times;</span>
+    </button>
+     <h5 class="modal-title">{{item.itemName}}</h5>
+</div>
+<div class="modal-body" id="message-model-content">
+    <ul class="message-popup-list">
+        <div class="row no-gutters">
+            <div class="col-12 col-sm-6 col-md-8"><strong>Quantity in Inventory</strong></div>
+          <div class="col-6 col-md-4">{{item.quantityAvailable}}</div>
         </div>
-    </li>
-    <div class="form-group">
-        <button class="btn btn-default" id="postReply" type="button">Reply</button>
-    </div>
-</ul>
+        <div class="row no-gutters">
+            <div class="col-12 col-sm-6 col-md-8"><strong>Quantity checked out</strong></div>
+          <div class="col-6 col-md-4">{{item.quantityOut}}</div>
+        </div>
+        <div class="row no-gutters">
+            <div class="col-12 col-sm-6 col-md-8"><strong>Price</strong></div>
+          <div class="col-6 col-md-4">{{item.price}}</div>
+        </div>
+        <div class="row no-gutters">
+            <div class="col-12 col-sm-6 col-md-8"><strong>Category</strong></div>
+          <div class="col-6 col-md-4">{{item.category}}</div>
+        </div>
+        <div class="row no-gutters">
+            <div class="col-12 col-sm-6 col-md-8"><strong>Requires Processing</strong></div>
+          <div class="col-6 col-md-4">{{item.processing}}</div>
+        </div>
+    </ul>
+</div>
+ <div class="modal-footer">
+        <form class="form-inline" role="form" action= "{{ url_for('GCInv.table') }}">
+            {% import "bootstrap/wtf.html" as wtf %}
+            {{ wtf.quick_form(form) }}
+        </form>
+ </div>

@@ -40,38 +40,31 @@ $.ajax({
     $('#local').dynatable({
       dataset: {
         records: data["records"]
-        },
-      writers: {
-      _rowWriter: myRowWriter
-        },
-      readers: {
-      _rowReader: myRowReader
         }
+      // writers: {
+      // _rowWriter: myRowWriter
+      //   },
+      // readers: {
+      // _rowReader: myRowReader
+      //   }
+    });
+    $("span.itemName").bind('click', function() {
+        var contentPanelId = jQuery(this).attr("id");
+        makePop(contentPanelId);
     });
   }
 });
 
 
-  //   $("#local").dynatable({
 
-  //   dataset: {
-  //       ajax: true,
-  //       ajaxOnLoad: true,
-  //       ajaxUrl: '/edit/getInv',
-  //       records: []
-  // }
-  //,
-  // params: {
-  //   records: '_root'
-  // }
-// });
-    // dataset: {
-    //     records: JSON.parse($("#music").text())
-    // }});
-    //table links
 
-$(".itemName").click(on_click);
-// console.log($.get("/edit/getInv"))
+    $(window).bind('resize', function(e){
+		$(".affix").css('width',$(".container-fluid" ).width());
+	});
+	$(window).on("scroll", function() {
+		$(".affix").css('width',$(".container-fluid" ).width());
+	});
+// console.log($("span.itemName"))
 });
 
 function createTable(data){
@@ -81,6 +74,7 @@ function createTable(data){
         records: data
       }
     });
+
 }
 
 function on_click() {
@@ -97,6 +91,25 @@ function min() {
     $('#user1Message').modal('hide');
     $('#calModal').modal('show');
   }
+//https://www.youtube.com/watch?v=JmtM9f9Ns90
+function makePop(id) {
+    console.log(id);
+    console.log($.get($SCRIPT_ROOT + '/edit/getItem/' + id))
+    $.get($SCRIPT_ROOT + '/edit/getItem/' + id)
+    .done(function(data) {
+            $('#message-model-content').html(data);
+            $('#user1Message').modal('show');
+          });
+}
+ // $(function() {
+ //    $('#showConversation').bind('click', function() {
+ //     console.log("show conversation clicked");
+ //     $.get( "/view_conversation")
+ //          .done(function(data) {
+ //            $('#message-model-content').html(data);
+ //            $('#user1Message').modal('show');
+ //          });
+ //    });
 
 function myRowWriter(rowIndex, record, columns, cellWriter) {
     var tr = '';

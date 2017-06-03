@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, IntegerField, SubmitField, validators, SelectField, BooleanField
+from wtforms import StringField, IntegerField, SubmitField, validators, SelectField, BooleanField, ValidationError
 
 
 class AddGeartoInv(FlaskForm):
@@ -10,3 +10,17 @@ class AddGeartoInv(FlaskForm):
     itemProcessingRequired = BooleanField("Requires Additional Checking Processing")
     submit = SubmitField("Add Item")
 
+#Custom Validators
+def check_positive(form, field):
+    if field.data > 0:
+        raise ValidationError('must checkout atleast 1 and no negatives')
+
+
+
+class Checkout(FlaskForm):
+    """
+        Form to checkout a centrain number of items
+    """
+
+    numberToCheckOut = IntegerField("",[validators.DataRequired("Please Provide how many you wish to checkout"),check_positive])
+    submit = SubmitField("Add to Pack")
