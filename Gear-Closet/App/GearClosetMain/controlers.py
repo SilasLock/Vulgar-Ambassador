@@ -65,7 +65,7 @@ def index():
 
 @GCInv.route("/table")
 def table():
-    return render_template('testTable.html')
+    return render_template('invCheckout.html')
 
 @GCInv.route("/side")
 def side():
@@ -73,7 +73,7 @@ def side():
 
 @GCInv.route("/itemPopUp")
 def itemPopUp():
-    return render_template("testPop.html")
+    return render_template("itemCheckoutPop.html")
 
 @GCInv.route("/42")
 def fortytwo():

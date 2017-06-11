@@ -1,0 +1,40 @@
+{% extends "Base.html" %}
+
+{% block head %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.7.2/parsley.min.js"></script>
+<script src="static/tableControl.js"></script>
+<link rel="stylesheet" href="static/cartCounter.css">
+{%endblock%}
+
+
+
+{% block modal %}{% endblock %}
+{% include "modals.html" %}
+<!--so some how this loads a modal whatever that is and then that allows us to do pop up stuff-->
+
+
+
+{% block cartIcon %}
+            <div class="container">
+                <div  class="cart is-closed">
+                    <div class='btn-toolbar pull-right' >
+                        <span class="glyphicon glyphicon-tree-conifer"></span>
+                        <div class="counter">
+                            <p style="color: white;">5</p>
+                        </div>
+                     </div>
+                </div>
+            </div>
+{% endblock %}
+
+{% block content %}
+   <h3>Local JSON: Succeeding</h3>
+        <table class="table table-hover" id="local">
+          <thead>
+            <th style="color: black;">itemName</th>
+            <th>itemPrice</th>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+{% endblock %}

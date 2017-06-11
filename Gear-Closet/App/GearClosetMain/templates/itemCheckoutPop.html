@@ -2,11 +2,13 @@
   <!--<div class="col-12 col-sm-6 col-md-8">.col-12 .col-sm-6 .col-md-8</div>-->
   <!--<div class="col-6 col-md-4">.col-6 .col-md-4</div>-->
 <!--</div>-->
+
+
 <div class="modal-header">
     <button type="button" class="close"  data-dismiss="modal" aria-label="Close" class="message-popup-close" >
         <span aria-hidden="true">&times;</span>
     </button>
-     <h5 class="modal-title">{{item.itemName}}</h5>
+     <h5 class="modal-title" id="{{item.id}}">{{item.itemName}}</h5>
 </div>
 <div class="modal-body" id="message-model-content">
     <ul class="message-popup-list">
@@ -33,8 +35,30 @@
     </ul>
 </div>
  <div class="modal-footer">
-        <form class="form-inline" role="form" action= "{{ url_for('GCInv.table') }}">
-            {% import "bootstrap/wtf.html" as wtf %}
-            {{ wtf.quick_form(form) }}
+        <form class="form-inline" role="form" id="demo-form" data-parsley-validate="">
+            <label class="mr-sm-2" for="numSelected">Number to check out   </label>
+            <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="numSelected" data-parsley-required="true">
+            <option value="">Choose...</option>
+            {% for val in range(1,item.quantityAvailable +1)%}
+            <option value="{{val}}">{{val}}</option>
+            {% endfor %}
+            </select>
+            <input type="submit" class="btn btn-default" value="add to cart">
+            <!--{% import "bootstrap/wtf.html" as wtf %}-->
+            <!--{{ wtf.quick_form(form) }}-->
         </form>
  </div>
+
+<script type="text/javascript">
+$(function () {
+  $('#demo-form').parsley().on('field:validated', function() {
+    var ok = $('.parsley-error').length === 0;
+    $('.bs-callout-info').toggleClass('hidden', !ok);
+    $('.bs-callout-warning').toggleClass('hidden', ok);
+  })
+  .on('form:submit', function() {
+    var numSelected =  $('#demo-form').serialize();
+    console.log(numSelected)
+  });
+});
+</script>

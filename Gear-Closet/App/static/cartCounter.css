@@ -1,0 +1,39 @@
+
+/*-------------------------------*/
+/*           Cart Button         */
+/*-------------------------------*/
+
+.cart {
+  position: absolute;
+  top: 20px;
+  right:4%;
+  z-index: 999;
+  display: block;
+  width: 32px;
+  height: 32px;
+  margin-left: 15px;
+  background: transparent;
+  border: none;
+}
+
+.cart.is-closed:before {
+  position: relative;
+  width: 100px;
+  line-height: 32px;
+  text-align: center;
+  opacity: 0;
+  -webkit-transform: translate3d(0,0,0);
+}
+
+.glyphicon {
+    font-size: 40px;
+}
+
+.counter {
+    right: 12%;
+    position:absolute;
+    text-align:center;
+    top: 14px;
+    width: 100%;
+    z-index: 999;
+}
