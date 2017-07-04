@@ -4,26 +4,26 @@
 
 $(document).ready(function () {
   //table
-$.ajax({
-  url: '/edit/getInv',
-  success: function(data){
-    $('#local').dynatable({
-      dataset: {
-        records: data["records"]
-        }
-      // writers: {
-      // _rowWriter: myRowWriter
-      //   },
-      // readers: {
-      // _rowReader: myRowReader
-      //   }
+    $.ajax({
+      url: '/api/getInv',
+      success: function(data){
+        $('#local').dynatable({
+          dataset: {
+            records: data["records"]
+            }
+          // writers: {
+          // _rowWriter: myRowWriter
+          //   },
+          // readers: {
+          // _rowReader: myRowReader
+          //   }
+        });
+        $("span.itemName").bind('click', function() {
+            var contentPanelId = jQuery(this).attr("id");
+            makePop(contentPanelId);
+        });
+      }
     });
-    $("span.itemName").bind('click', function() {
-        var contentPanelId = jQuery(this).attr("id");
-        makePop(contentPanelId);
-    });
-  }
-});
 });
 
 // function createTable(data){
@@ -55,7 +55,7 @@ function min() {
 function makePop(id) {
     console.log(id);
     // console.log($.get($SCRIPT_ROOT + '/edit/getItem/' + id))
-    $.get('/edit/getItem/' + id)
+    $.get('/api/getItem/' + id)
     .done(function(data) {
             $('#message-model-content').html(data);
             $('#user1Message').modal('show');

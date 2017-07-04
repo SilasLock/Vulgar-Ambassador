@@ -2,7 +2,7 @@ import os, json
 from GCDatabaseMangment.GCDBSchema import Inventory
 from App.GearClosetMain.controlers import GCInv
 from App.InventoryMangment.controlers import InvMangment
-from flask import Flask
+from flask import Flask, session
 from flask_bootstrap import Bootstrap
 
 from GCDatabaseMangment.GCDBSchema import db
@@ -20,5 +20,8 @@ with app.app_context():
 
 
 app.register_blueprint(GCInv)
-app.register_blueprint(InvMangment, url_prefix='/edit')
+app.register_blueprint(InvMangment, url_prefix='/api')
+# @app.before_request
+# def before_request():
+#     session["backpack"] = []
 # print(app.url_map)

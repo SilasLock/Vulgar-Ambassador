@@ -12,7 +12,7 @@ class AddGeartoInv(FlaskForm):
 
 #Custom Validators
 def check_positive(form, field):
-    if field.data > 0:
+    if int(field.data) > 0:
         raise ValidationError('must checkout atleast 1 and no negatives')
 
 
@@ -21,6 +21,5 @@ class Checkout(FlaskForm):
     """
         Form to checkout a centrain number of items
     """
-
-    numberToCheckOut = IntegerField("",[validators.DataRequired("Please Provide how many you wish to checkout"),check_positive])
+    numberToCheckout = SelectField("Number to check out", choices=[(0,0)])
     submit = SubmitField("Add to Pack")

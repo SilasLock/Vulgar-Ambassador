@@ -64,10 +64,12 @@ class checkedOut(db.Model):
     clientCheckoutID = db.Column(db.Integer, db.ForeignKey("Client.studentID"))
     # above defines the Many to one relationship of Client and checkedOut
     inventory = db.Column(db.Integer, db.ForeignKey("Inventory.id"))
+    numberOut = db.Column(db.Integer)
 
-    def __init__(self, studentID, inventoryID):
+    def __init__(self, studentID, inventoryID, numberOut=1):
         self.clientCheckoutID = studentID
         self.inventory = inventoryID
+        self.numberOut = numberOut
 
 
 

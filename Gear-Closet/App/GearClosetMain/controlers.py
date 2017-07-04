@@ -1,7 +1,7 @@
 import os, json
 from GCDatabaseMangment.InventroyForms import AddGeartoInv
 from flask import  request, redirect, url_for, \
-     render_template, flash,Blueprint, jsonify
+     render_template, flash,Blueprint, jsonify, session
 from GCDatabaseMangment.GCDBSchema import db, Inventory, Processing, Client, Category, checkedOut
 GCInv = Blueprint('GCInv', __name__, template_folder='templates')
 
@@ -63,8 +63,10 @@ def index():
     #     db.session.commit()
     return render_template('testAJAX.html')
 
-@GCInv.route("/table")
+@GCInv.route("/table", methods=['POST', 'GET'])
 def table():
+    if "backpack" not in session:
+        session["backpack"] = []
     return render_template('invCheckout.html')
 
 @GCInv.route("/side")
