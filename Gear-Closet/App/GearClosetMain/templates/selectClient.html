@@ -1,0 +1,33 @@
+{% extends "Base.html" %}
+
+{% block head %}
+<script src="static/GearClosetMain/selectClient.js"></script>
+{%endblock%}
+
+{% block modal %}{% endblock %}
+{% include "modals/modals.html" %}
+<!--so some how this loads a modal whatever that is and then that allows us to do pop up stuff-->
+
+{% block cartIcon %}
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class='btn-toolbar pull-right' >
+        <button type="button" class="btn btn-primary" id="AddClient">Add Client</button>
+    </div>
+   <h3>Clients</h3>
+</div>
+<div class="row">
+    <table class="table table-hover" id="ClientTable">
+        <thead>
+            <th style="color: black;">clientName</th>
+            <th>clientStudentId</th>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</div>
+
+
+{% endblock %}

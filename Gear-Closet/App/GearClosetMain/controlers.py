@@ -44,13 +44,13 @@ GCInv = Blueprint('GCInv', __name__, template_folder='templates')
 
 
 
-
 # http://flask.pocoo.org/docs/0.12/patterns/jquery/
 @GCInv.route('/_add_numbers')
 def add_numbers():
     a = request.args.get('a', 0, type=int)
     b = request.args.get('b', 0, type=int)
     return jsonify(result=a + b)
+
 
 @GCInv.route('/')
 def index():
@@ -63,20 +63,19 @@ def index():
     #     db.session.commit()
     return render_template('testAJAX.html')
 
+
 @GCInv.route("/table", methods=['POST', 'GET'])
 def table():
     if "backpack" not in session:
         session["backpack"] = []
     return render_template('invCheckout.html')
 
-@GCInv.route("/side")
-def side():
-    return render_template('sideBarTest.html')
 
 @GCInv.route("/itemPopUp")
 def itemPopUp():
     return render_template("itemCheckoutPop.html")
 
-@GCInv.route("/42")
-def fortytwo():
-    return jsonify(42)
+
+@GCInv.route("/selectClient", methods=['POST', 'GET'])
+def selectClient():
+    return render_template("selectClient.html")

@@ -1,23 +1,21 @@
-from flask import  request, redirect, url_for, \
-     render_template, flash,Blueprint, jsonify, session
+from flask import request, redirect, url_for, \
+    render_template, flash, Blueprint, jsonify, session
 from GCDatabaseMangment.GCDBSchema import db, Inventory, Processing, Client, Category, checkedOut
-from GCDatabaseMangment.InventroyForms import Checkout
+from GCDatabaseMangment.InventroyForms import Checkout, CreateClient
 import json
 
 InvMangment = Blueprint('InvMangment', __name__, template_folder='templates')
 
-#https://www.dynatable.com/?perPage=50
-#cool table plug in just would need to add checkout box for it and also editablity
 
 @InvMangment.route("/editItemName")
 def editItemName():
     # for this id thing what we will do is give each row the id atibute of the item id in inv
-    id = request.args.get('itemID',0,type=int)
-    newName = request.args.get('new_name_'+id,0,type=int)
-    item = Inventory.query.filter_by(id = id).first()
+    id = request.args.get('itemID', 0, type=int)
+    newName = request.args.get('new_name_' + id, 0, type=int)
+    item = Inventory.query.filter_by(id=id).first()
     item.itemName = newName
     db.session.commit()
-    return Inventory.query.filter_by(id = id).first().itemName #get the new name from the inventory
+    return Inventory.query.filter_by(id=id).first().itemName  # get the new name from the inventory
 
 
 @InvMangment.route("/editQuantityAvailable")
@@ -45,7 +43,7 @@ def editCatagory():
     pass
 
 
-@InvMangment.route("/addCatagory")
+@InvMangment.route("/addCatagory", methods=['GET', 'POST'])
 def addCatagoty():
     pass
 
@@ -53,8 +51,13 @@ def addCatagoty():
 @InvMangment.route("/getInv")
 def getInv():
     invList = Inventory.query.all()
-    return jsonify(records=[i.serializeTable for i in invList])
-                  
+    return jsonify(data=[i.serializeTable for i in invList])
+
+
+@InvMangment.route("/getClients")
+def getClients():
+    ClientList = Client.query.all()
+    return jsonify(data=[i.serializeTable for i in ClientList])
 
 
 @InvMangment.route("/getbackpack")
@@ -69,33 +72,61 @@ def getBackpack():
             data["numberToCheckout"] = item["numToCheckout"]
             print(data)
             tableData += data
-        return jsonify(records=tableData)
+        return jsonify(data=tableData)
 
 
-
-@InvMangment.route("/getItem/<int:itemID>",  methods=['POST', 'GET'])
+@InvMangment.route("/getItem/<int:itemID>", methods=['POST', 'GET'])
 def getItem(itemID):
     item = Inventory.query.filter_by(id=itemID).first()
-    numAvalible =  item.quantityAvailable
-    choices = [(n, n) for n in range(1, numAvalible+1, 1)]
+    numAvalible = item.quantityAvailable
+    choices = [(n, n) for n in range(1, numAvalible + 1, 1)]
     form = Checkout()
     form.numberToCheckout.choices = choices
     if request.method == 'POST':
         if "backpack" in session:
-            session["backpack"] += [{"itemName":item.itemName, "id":item.id, "numToCheckout":int(form.data['numberToCheckout'])}]
+            session["backpack"] += [
+                {"itemName": item.itemName, "id": item.id, "numToCheckout": int(form.data['numberToCheckout'])}]
         else:
-            session["backpack"] = [{"itemName":item.itemName, "id":item.id, "numToCheckout":int(form.data['numberToCheckout'])}]
+            session["backpack"] = [
+                {"itemName": item.itemName, "id": item.id, "numToCheckout": int(form.data['numberToCheckout'])}]
         print(session["backpack"], len(session["backpack"]))
         return redirect(url_for('GCInv.table'))
-    elif request.method == 'GET':# this route should only be called internally
-        return render_template("itemCheckoutPop.html", item=item, form=form)
+    elif request.method == 'GET':  # this route should only be called internally
+        return render_template("modals/itemCheckoutPop.html", item=item, form=form)
 
 
-@InvMangment.route("/checkout")
-def checkout():
+@InvMangment.route("/getBackpackPopUp")
+def getBackpackPopUp():
+    return render_template("modals/BackpackPopUp.html")
+
+
+@InvMangment.route("/makeClientPopUp", methods=['POST', 'GET'])
+def getClientPopUp():
+    form = CreateClient()
+    if request.method == 'POST':
+        if form.validate() == False:
+            # TODO: Flash error message
+            return redirect(url_for('GCInv.selectClient'))
+        else:
+            print(form.data)
+            db.session.add(Client(form.data))
+            db.session.commit()
+            return redirect(url_for('GCInv.selectClient'))
+    elif request.method == 'GET':  # this route should only be called internally
+        return render_template("modals/createClientPopUp.html", form=form)
+
+
+@InvMangment.route("/checkout/<int:Clientid>")
+def checkout(Clientid):
     cart = session["backpack"]
-    client = Client.query.filter_by(id=session["clientID"])
+    client = Client.query.filter_by(id=Clientid).first()
     for item in cart:
         Inventory.query.checkItemOut(client=client, Itemid=item["id"], ItemNum=item["numToCheckout"])
+    session.pop("backpack", None)
+    return redirect(url_for('GCInv.table'))
 
 
+@InvMangment.route("/selectClient/<int:Clientid>")
+def selectClient(Clientid):
+    client = Client.query.filter_by(id=Clientid).first()
+    return render_template("/modals/CheckoutModal.html", client=client)

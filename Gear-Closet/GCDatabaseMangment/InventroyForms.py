@@ -23,3 +23,11 @@ class Checkout(FlaskForm):
     """
     numberToCheckout = SelectField("Number to check out", choices=[(0,0)])
     submit = SubmitField("Add to Pack")
+
+class CreateClient(FlaskForm):
+    clientName = StringField("Client Name", [validators.DataRequired("Please Provide the name of the item")])
+    studentID = IntegerField("student ID", [validators.DataRequired("Please Enter student ID")])
+    emailAdress = StringField("Client Email", [validators.DataRequired("Please enter email adress")])
+    phoneNumber = IntegerField("Client Phone Number", [validators.DataRequired("Please provide a client phone number")])
+    Employee = BooleanField("Are they an Employee")
+    submit = SubmitField("Add Client")

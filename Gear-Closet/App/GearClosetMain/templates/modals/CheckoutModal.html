@@ -1,0 +1,51 @@
+<!--<div class="modal-header">-->
+    <!--<button type="button" class="close"  data-dismiss="modal" aria-label="Close" class="message-popup-close" >-->
+        <!--<span aria-hidden="true">&times;</span>-->
+    <!--</button>-->
+     <!--<h5 class="modal-title">Checkout</h5>-->
+<!--</div>-->
+<div class="modal-body" id="message-model-content">
+    <h4 class="display-4">1. <strong>Client</strong></h4>
+        <table class="table table-hover">
+            <tbody>
+            <tr>
+                <td><strong>name</strong></td>
+                <td>{{client.name}}</td>
+            </tr>
+            <tr>
+                <td><strong>Phone</strong></td>
+                <td>{{client.phoneNumber}}</td>
+            </tr>
+            <tr>
+                <td><strong>email</strong></td>
+                <td>{{client.email}}</td>
+            </tr>
+            <tr>
+                <td><strong>student ID</strong></td>
+                <td>{{client.studentID}}</td>
+            </tr>
+            </tbody>
+        </table>
+    <h4 class="display-4">2. <strong>Backpack</strong></h4>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <td>Item Name</td>
+                <td>Item Quantity</td>
+            </tr>
+        </thead>
+        <tbody>
+        {% for item in session["backpack"] %}
+            <tr>
+                <td>{{item["itemName"]}}</td>
+                <td>{{item["numToCheckout"]}}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+
+    </table>
+</div>
+ <div class="modal-footer">
+     <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-hidden="true">Close</button>
+     <a class="btn btn-primary" href={{url_for('InvMangment.checkout', Clientid=client.id)}} role="button">Checkout</a>
+ </div>

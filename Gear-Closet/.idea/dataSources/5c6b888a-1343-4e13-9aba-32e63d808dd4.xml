@@ -147,22 +147,30 @@ foreign key(&quot;inventoryid&quot;</ColNames>
       <Position>2</Position>
       <DataType>INTEGER(0,-1)|4</DataType>
     </column>
-    <key id="37" parent="7">
+    <column id="37" parent="7" name="numberOut">
+      <Position>3</Position>
+      <DataType>INTEGER(0,-1)|4</DataType>
+    </column>
+    <column id="38" parent="7" name="dateCheckedOut">
+      <Position>4</Position>
+      <DataType>DATE(0,-1)|12</DataType>
+    </column>
+    <key id="39" parent="7">
       <ColNames>id)
 foreign key(&quot;clientcheckoutid&quot;</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="38" parent="7" name="#FAKE_checkedOut_2">
+    <foreign-key id="40" parent="7" name="#FAKE_checkedOut_2">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>clientCheckoutID</ColNames>
       <Deferrable>1</Deferrable>
       <InitiallyDeferred>1</InitiallyDeferred>
       <RefTableName>Client</RefTableName>
-      <RefColNames>id</RefColNames>
+      <RefColNames>studentID</RefColNames>
       <OnDelete>no-action</OnDelete>
       <OnUpdate>no-action</OnUpdate>
     </foreign-key>
-    <foreign-key id="39" parent="7" name="#FAKE_checkedOut_1">
+    <foreign-key id="41" parent="7" name="#FAKE_checkedOut_1">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>inventory</ColNames>
       <Deferrable>1</Deferrable>

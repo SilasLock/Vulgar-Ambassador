@@ -17,11 +17,13 @@ Bootstrap(app)
 db.init_app(app)
 with app.app_context():
     db.create_all()
-
+    # with open(os.getcwd() + '/tests/inventoryGC.json') as data_file:
+    #     data = json.load(data_file)
+    # for item in data['data'].values():
+    #     temp = Inventory(item)
+    #     db.session.add(temp)
+    # db.session.commit()
 
 app.register_blueprint(GCInv)
 app.register_blueprint(InvMangment, url_prefix='/api')
-# @app.before_request
-# def before_request():
-#     session["backpack"] = []
-# print(app.url_map)
+

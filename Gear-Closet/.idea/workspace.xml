@@ -10,12 +10,13 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/Gear-Closet$Nosetest_Database_Use_Tests_test_checkoutItemFromInventory.coverage" NAME="Nosetest Database_Use_Tests.test_checkoutItemFromInventory Coverage Results" MODIFIED="1495056057623" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/Gear-Closet$Nosetest_Database_Use_Tests_test_checkoutItemFromInventory.coverage" NAME="Nosetest Database_Use_Tests.test_checkoutItemFromInventory Coverage Results" MODIFIED="1499651484654" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/Gear-Closet$Nosetest_Database_Use_Tests_test_checkoutAllItemsFromInventory.coverage" NAME="Nosetest Database_Use_Tests.test_checkoutAllItemsFromInventory Coverage Results" MODIFIED="1499651735398" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/Gear-Closet$testingSetup.coverage" NAME="testingSetup Coverage Results" MODIFIED="1494883777777" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/Gear-Closet$Nosetest_Database_Use_Tests_test_additemToinv.coverage" NAME="Nosetest Database_Use_Tests.test_additemToinv Coverage Results" MODIFIED="1494883938180" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/Gear-Closet$Nosetest_Database_Use_Tests_test_checkInItemFromInventoryNonProcessing.coverage" NAME="Nosetest Database_Use_Tests.test_checkInItemFromInventoryNonProcessing Coverage Results" MODIFIED="1495771309473" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/Gear-Closet$Nosetests_in_Database_Use_Tests.coverage" NAME="Nosetests in Database_Use_Tests Coverage Results" MODIFIED="1495057070129" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/Gear-Closet$run.coverage" NAME="run Coverage Results" MODIFIED="1499056237346" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Gear-Closet$Nosetests_in_Database_Use_Tests.coverage" NAME="Nosetests in Database_Use_Tests Coverage Results" MODIFIED="1499656562882" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/Gear-Closet$run.coverage" NAME="run Coverage Results" MODIFIED="1499650214178" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -36,38 +37,6 @@
         <option name="myItemId" value="testGC.db" />
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="Processing" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-    </PATH>
-    <PATH>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="testGC.db" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="Inventory" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-    </PATH>
-    <PATH>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="testGC.db" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="Client" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
     </PATH>
     <PATH>
       <PATH_ELEMENT>
@@ -83,57 +52,29 @@
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
     </PATH>
-    <PATH>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="testGC.db" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-    </PATH>
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="itemCheckoutPop.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/App/GearClosetMain/templates/itemCheckoutPop.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="38" column="14" lean-forward="false" selection-start-line="38" selection-start-column="14" selection-end-line="38" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Base.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/App/GearClosetMain/templates/Base.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="41">
-              <caret line="17" column="7" lean-forward="false" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="modals.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/App/GearClosetMain/templates/modals.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="controlers.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="controlers.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/App/InventoryMangment/controlers.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
-              <caret line="56" column="18" lean-forward="false" selection-start-line="56" selection-start-column="18" selection-end-line="56" selection-end-column="18" />
+            <state relative-caret-position="1815">
+              <caret line="125" column="43" lean-forward="false" selection-start-line="125" selection-start-column="43" selection-end-line="125" selection-end-column="43" />
               <folding>
-                <element signature="e#0#104#0" expanded="true" />
+                <element signature="e#0#103#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="selectClient.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/App/static/GearClosetMain/selectClient.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="690">
+              <caret line="48" column="29" lean-forward="false" selection-start-line="48" selection-start-column="29" selection-end-line="48" selection-end-column="29" />
+              <folding>
+                <element signature="e#0#48#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -143,7 +84,7 @@
         <entry file="file://$PROJECT_DIR$/GCDatabaseMangment/GCDBQuery.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="105">
-              <caret line="8" column="20" lean-forward="false" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="20" />
+              <caret line="8" column="8" lean-forward="false" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -152,45 +93,33 @@
       <file leaf-file-name="GCDBSchema.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GCDatabaseMangment/GCDBSchema.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1050">
-              <caret line="71" column="34" lean-forward="false" selection-start-line="71" selection-start-column="34" selection-end-line="71" selection-end-column="34" />
+            <state relative-caret-position="225">
+              <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="24" selection-end-column="56" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GCDB_test.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tests/GCDB_test.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="607">
+              <caret line="201" column="37" lean-forward="false" selection-start-line="201" selection-start-column="37" selection-end-line="201" selection-end-column="37" />
+              <folding>
+                <element signature="e#0#35#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/App/__init__.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="24" selection-end-column="25" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="controlers.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/App/GearClosetMain/controlers.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="372">
-              <caret line="71" column="21" lean-forward="false" selection-start-line="71" selection-start-column="21" selection-end-line="71" selection-end-column="21" />
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tableControl.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/App/static/tableControl.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="417">
-              <caret line="55" column="20" lean-forward="false" selection-start-line="55" selection-start-column="20" selection-end-line="55" selection-end-column="20" />
-              <folding>
-                <element signature="e#0#48#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="invCheckout.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/App/GearClosetMain/templates/invCheckout.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="381">
-              <caret line="33" column="46" lean-forward="false" selection-start-line="33" selection-start-column="46" selection-end-line="33" selection-end-column="46" />
-              <folding>
-                <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -202,10 +131,10 @@
       <list>
         <option value="Jupyter Notebook" />
         <option value="Python Unit Test" />
-        <option value="JavaScript File" />
         <option value="CSS File" />
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -215,8 +144,9 @@
       <find>postReply</find>
       <find>a</find>
       <find>user1Message</find>
-      <find>message</find>
       <find>query</find>
+      <find>message</find>
+      <find>crampons</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -234,27 +164,35 @@
         <option value="$PROJECT_DIR$/App/InventoryEditor/controlers.py" />
         <option value="$PROJECT_DIR$/App/GearClosetMain/static/test.js" />
         <option value="$PROJECT_DIR$/App/static/sideBarScript.js" />
-        <option value="$PROJECT_DIR$/App/GearClosetMain/templates/sideBarTest.html" />
-        <option value="$PROJECT_DIR$/tests/GCDB_test.py" />
         <option value="$PROJECT_DIR$/App/GearClosetMain/templates/modals.html" />
         <option value="$PROJECT_DIR$/App/GearClosetMain/templates/testPop.html" />
         <option value="$PROJECT_DIR$/App/GearClosetMain/templates/testTable.html" />
         <option value="$PROJECT_DIR$/App/static/test.js" />
         <option value="$PROJECT_DIR$/App/static/sideBar.js" />
         <option value="$PROJECT_DIR$/App/static/sideBarStyle.css" />
-        <option value="$PROJECT_DIR$/App/static/cartCounter.css" />
         <option value="$PROJECT_DIR$/App/GearClosetMain/templates/base.html" />
-        <option value="$PROJECT_DIR$/App/GearClosetMain/templates/Base.html" />
-        <option value="$PROJECT_DIR$/App/static/tableControl.js" />
         <option value="$PROJECT_DIR$/App/GearClosetMain/templates/itemCheckoutPop.html" />
-        <option value="$PROJECT_DIR$/App/GearClosetMain/templates/invCheckout.html" />
-        <option value="$PROJECT_DIR$/App/__init__.py" />
-        <option value="$PROJECT_DIR$/GCDatabaseMangment/InventroyForms.py" />
-        <option value="$PROJECT_DIR$/App/GearClosetMain/controlers.py" />
         <option value="$PROJECT_DIR$/GCDatabaseMangment/GCDBUtilities.py" />
-        <option value="$PROJECT_DIR$/GCDatabaseMangment/GCDBSchema.py" />
         <option value="$PROJECT_DIR$/GCDatabaseMangment/GCDBQuery.py" />
+        <option value="$PROJECT_DIR$/App/static/cartCounter.css" />
+        <option value="$PROJECT_DIR$/App/GearClosetMain/templates/CartPopUp.html" />
+        <option value="$PROJECT_DIR$/App/static/tableControl.js" />
+        <option value="$PROJECT_DIR$/App/GearClosetMain/templates/sideBarTest.html" />
+        <option value="$PROJECT_DIR$/App/GearClosetMain/controlers.py" />
+        <option value="$PROJECT_DIR$/App/GearClosetMain/templates/BackpackPopUp.html" />
+        <option value="$PROJECT_DIR$/GCDatabaseMangment/InventroyForms.py" />
+        <option value="$PROJECT_DIR$/App/GearClosetMain/templates/createClientPopUp.html" />
+        <option value="$PROJECT_DIR$/App/static/GearClosetMain/tableControl.js" />
+        <option value="$PROJECT_DIR$/App/GearClosetMain/templates/Base.html" />
+        <option value="$PROJECT_DIR$/App/GearClosetMain/templates/GCmain.html" />
+        <option value="$PROJECT_DIR$/App/GearClosetMain/templates/invCheckout.html" />
+        <option value="$PROJECT_DIR$/App/GearClosetMain/templates/selectClient.html" />
+        <option value="$PROJECT_DIR$/App/static/GearClosetMain/selectClient.js" />
+        <option value="$PROJECT_DIR$/App/GearClosetMain/templates/modals/CheckoutModal.html" />
         <option value="$PROJECT_DIR$/App/InventoryMangment/controlers.py" />
+        <option value="$PROJECT_DIR$/App/__init__.py" />
+        <option value="$PROJECT_DIR$/GCDatabaseMangment/GCDBSchema.py" />
+        <option value="$PROJECT_DIR$/tests/GCDB_test.py" />
       </list>
     </option>
   </component>
@@ -265,10 +203,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1" />
-    <option name="y" value="67" />
-    <option name="width" value="1439" />
-    <option name="height" value="732" />
+    <option name="width" value="1440" />
+    <option name="height" value="900" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -371,6 +307,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GearClosetMain" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Gear-Closet" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Gear-Closet" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="App" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="InventoryMangment" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -415,10 +373,36 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Gear-Closet" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Gear-Closet" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="App" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GearClosetMain" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modals" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -430,18 +414,22 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="FullScreen" value="true" />
+    <property name="database.data.extractors.current" value="SQL Inserts" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/App" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/App/GearClosetMain/templates/modals" />
+      <recent name="$PROJECT_DIR$/App/GearClosetMain/templates" />
+      <recent name="$PROJECT_DIR$/App/static/GearClosetMain" />
       <recent name="$PROJECT_DIR$/App/GearClosetMain/static" />
       <recent name="$PROJECT_DIR$/App/Gear Closet Main" />
-      <recent name="$PROJECT_DIR$/tests" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.run">
+  <component name="RunManager" selected="Python tests.Nosetests in Database_Use_Tests">
     <configuration default="false" name="run" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -476,28 +464,6 @@
       <option name="METHOD_NAME" value="" />
       <option name="FOLDER_NAME" value="" />
       <option name="TEST_TYPE" value="TEST_CLASS" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="Nosetest Database_Use_Tests.test_additemToinv" type="tests" factoryName="Nosetests" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Gear-Closet" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/GCDB_test.py" />
-      <option name="CLASS_NAME" value="Database_Use_Tests" />
-      <option name="METHOD_NAME" value="test_additemToinv" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_METHOD" />
       <option name="PATTERN" value="" />
       <option name="USE_PATTERN" value="false" />
       <option name="PARAMS" value="" />
@@ -540,6 +506,28 @@
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/GCDB_test.py" />
       <option name="CLASS_NAME" value="Database_Use_Tests" />
       <option name="METHOD_NAME" value="test_checkInItemFromInventoryNonProcessing" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_METHOD" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Nosetest Database_Use_Tests.test_checkoutAllItemsFromInventory" type="tests" factoryName="Nosetests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Gear-Closet" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/GCDB_test.py" />
+      <option name="CLASS_NAME" value="Database_Use_Tests" />
+      <option name="METHOD_NAME" value="test_checkoutAllItemsFromInventory" />
       <option name="FOLDER_NAME" value="" />
       <option name="TEST_TYPE" value="TEST_METHOD" />
       <option name="PATTERN" value="" />
@@ -765,17 +753,17 @@
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.run" />
       <item index="1" class="java.lang.String" itemvalue="Python tests.Nosetests in Database_Use_Tests" />
-      <item index="2" class="java.lang.String" itemvalue="Python tests.Nosetest Database_Use_Tests.test_additemToinv" />
-      <item index="3" class="java.lang.String" itemvalue="Python tests.Nosetest Database_Use_Tests.test_checkoutItemFromInventory" />
-      <item index="4" class="java.lang.String" itemvalue="Python tests.Nosetest Database_Use_Tests.test_checkInItemFromInventoryNonProcessing" />
+      <item index="2" class="java.lang.String" itemvalue="Python tests.Nosetest Database_Use_Tests.test_checkoutItemFromInventory" />
+      <item index="3" class="java.lang.String" itemvalue="Python tests.Nosetest Database_Use_Tests.test_checkInItemFromInventoryNonProcessing" />
+      <item index="4" class="java.lang.String" itemvalue="Python tests.Nosetest Database_Use_Tests.test_checkoutAllItemsFromInventory" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.run" />
-        <item index="1" class="java.lang.String" itemvalue="Python tests.Nosetest Database_Use_Tests.test_checkInItemFromInventoryNonProcessing" />
-        <item index="2" class="java.lang.String" itemvalue="Python tests.Nosetests in Database_Use_Tests" />
-        <item index="3" class="java.lang.String" itemvalue="Python tests.Nosetest Database_Use_Tests.test_checkoutItemFromInventory" />
-        <item index="4" class="java.lang.String" itemvalue="Python tests.Nosetest Database_Use_Tests.test_additemToinv" />
+        <item index="0" class="java.lang.String" itemvalue="Python tests.Nosetests in Database_Use_Tests" />
+        <item index="1" class="java.lang.String" itemvalue="Python tests.Nosetest Database_Use_Tests.test_checkoutAllItemsFromInventory" />
+        <item index="2" class="java.lang.String" itemvalue="Python tests.Nosetest Database_Use_Tests.test_checkoutItemFromInventory" />
+        <item index="3" class="java.lang.String" itemvalue="Python.run" />
+        <item index="4" class="java.lang.String" itemvalue="Python tests.Nosetest Database_Use_Tests.test_checkInItemFromInventoryNonProcessing" />
       </list>
     </recent_temporary>
   </component>
@@ -796,34 +784,34 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Nosetest_Database_Use_Tests_test_checkInItemFromInventoryNonProcessing - 2017.05.25 at 23h 57m 39s.xml">
-      <configuration name="Nosetest Database_Use_Tests.test_checkInItemFromInventoryNonProcessing" configurationId="tests" />
+    <history-entry file="Nosetest_Database_Use_Tests_test_checkoutAllItemsFromInventory - 2017.07.09 at 18h 53m 16s.xml">
+      <configuration name="Nosetest Database_Use_Tests.test_checkoutAllItemsFromInventory" configurationId="tests" />
     </history-entry>
-    <history-entry file="Nosetest_Database_Use_Tests_test_checkInItemFromInventoryNonProcessing - 2017.05.26 at 00h 01m 17s.xml">
-      <configuration name="Nosetest Database_Use_Tests.test_checkInItemFromInventoryNonProcessing" configurationId="tests" />
+    <history-entry file="Nosetest_Database_Use_Tests_test_checkoutAllItemsFromInventory - 2017.07.09 at 18h 53m 58s.xml">
+      <configuration name="Nosetest Database_Use_Tests.test_checkoutAllItemsFromInventory" configurationId="tests" />
     </history-entry>
-    <history-entry file="Nosetest_Database_Use_Tests_test_checkInItemFromInventoryNonProcessing - 2017.05.26 at 00h 01m 57s.xml">
-      <configuration name="Nosetest Database_Use_Tests.test_checkInItemFromInventoryNonProcessing" configurationId="tests" />
+    <history-entry file="Nosetest_Database_Use_Tests_test_checkoutAllItemsFromInventory - 2017.07.09 at 18h 55m 46s.xml">
+      <configuration name="Nosetest Database_Use_Tests.test_checkoutAllItemsFromInventory" configurationId="tests" />
     </history-entry>
-    <history-entry file="Nosetest_Database_Use_Tests_test_checkoutItemFromInventory - 2017.05.17 at 14h 07m 11s.xml">
+    <history-entry file="Nosetest_Database_Use_Tests_test_checkoutItemFromInventory - 2017.07.09 at 18h 25m 02s.xml">
       <configuration name="Nosetest Database_Use_Tests.test_checkoutItemFromInventory" configurationId="tests" />
     </history-entry>
-    <history-entry file="Nosetest_Database_Use_Tests_test_checkoutItemFromInventory - 2017.05.17 at 14h 13m 40s.xml">
+    <history-entry file="Nosetest_Database_Use_Tests_test_checkoutItemFromInventory - 2017.07.09 at 18h 49m 34s.xml">
       <configuration name="Nosetest Database_Use_Tests.test_checkoutItemFromInventory" configurationId="tests" />
     </history-entry>
-    <history-entry file="Nosetest_Database_Use_Tests_test_checkoutItemFromInventory - 2017.05.17 at 14h 14m 07s.xml">
+    <history-entry file="Nosetest_Database_Use_Tests_test_checkoutItemFromInventory - 2017.07.09 at 18h 51m 08s.xml">
       <configuration name="Nosetest Database_Use_Tests.test_checkoutItemFromInventory" configurationId="tests" />
     </history-entry>
-    <history-entry file="Nosetest_Database_Use_Tests_test_checkoutItemFromInventory - 2017.05.17 at 14h 16m 21s.xml">
+    <history-entry file="Nosetest_Database_Use_Tests_test_checkoutItemFromInventory - 2017.07.09 at 18h 51m 33s.xml">
       <configuration name="Nosetest Database_Use_Tests.test_checkoutItemFromInventory" configurationId="tests" />
     </history-entry>
-    <history-entry file="Nosetest_Database_Use_Tests_test_checkoutItemFromInventory - 2017.05.17 at 14h 19m 54s.xml">
-      <configuration name="Nosetest Database_Use_Tests.test_checkoutItemFromInventory" configurationId="tests" />
+    <history-entry file="Nosetests_in_Database_Use_Tests - 2017.07.09 at 18h 25m 21s.xml">
+      <configuration name="Nosetests in Database_Use_Tests" configurationId="tests" />
     </history-entry>
-    <history-entry file="Nosetest_Database_Use_Tests_test_checkoutItemFromInventory - 2017.05.17 at 14h 21m 05s.xml">
-      <configuration name="Nosetest Database_Use_Tests.test_checkoutItemFromInventory" configurationId="tests" />
+    <history-entry file="Nosetests_in_Database_Use_Tests - 2017.07.09 at 18h 26m 19s.xml">
+      <configuration name="Nosetests in Database_Use_Tests" configurationId="tests" />
     </history-entry>
-    <history-entry file="Nosetests_in_Database_Use_Tests - 2017.05.17 at 14h 37m 58s.xml">
+    <history-entry file="Nosetests_in_Database_Use_Tests - 2017.07.09 at 20h 16m 16s.xml">
       <configuration name="Nosetests in Database_Use_Tests" configurationId="tests" />
     </history-entry>
   </component>
@@ -837,27 +825,27 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1" y="67" width="1439" height="732" extended-state="0" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20329277" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17310444" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36875" sideWeight="0.50178957" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1932713" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19313304" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328125" sideWeight="0.49749464" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26875" sideWeight="0.49821046" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24967405" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3997195" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2686747" sideWeight="0.49821046" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891566" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3997195" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -891,63 +879,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/GCDatabaseMangment/GCDBSchema.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="44" column="41" lean-forward="false" selection-start-line="44" selection-start-column="41" selection-end-line="44" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/InventoryMangment/controlers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="23" column="36" lean-forward="true" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/GearClosetMain/controlers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="54" column="12" lean-forward="true" selection-start-line="54" selection-start-column="12" selection-end-line="54" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/GearClosetMain/templates/invCheckout.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="28" lean-forward="true" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
-          <folding>
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/GearClosetMain/static/test.js" />
-    <entry file="file://$PROJECT_DIR$/App/GearClosetMain/static/jquery.dynatable.js" />
-    <entry file="file://$PROJECT_DIR$/App/GearClosetMain/templates/testAJAX.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GCDatabaseMangment/GCDBQuery.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/GCDB_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/inventoryGC.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -988,13 +919,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/inventoryGC.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="83" lean-forward="false" selection-start-line="0" selection-start-column="58" selection-end-line="0" selection-end-column="83" />
-        </state>
-      </provider>
-    </entry>
     <entry file="dbDummy://dbtable:/9e9e6f99/5c6b888a-1343-4e13-9aba-32e63d808dd4/Inventory" />
     <entry file="file://$PROJECT_DIR$/QRCreation/CreateQR.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -1020,31 +944,137 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/App/GearClosetMain/templates/GCmain.html">
+    <entry file="file://$PROJECT_DIR$/App/InventoryMangment/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/static/sideBar.js" />
+    <entry file="file://$PROJECT_DIR$/GCDatabaseMangment/GCDBUtilities.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="12" lean-forward="false" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/static/jquery.dynatable.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/static/GearClosetMain/cartCounter.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="326">
+          <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/static/GearClosetMain/sideBarScript.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="30" column="3" lean-forward="false" selection-start-line="30" selection-start-column="3" selection-end-line="30" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/static/GearClosetMain/sideBarStyle.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="18" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/GearClosetMain/templates/sideBarTest.html" />
+    <entry file="file://$PROJECT_DIR$/GCDatabaseMangment/InventroyForms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="4" lean-forward="false" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/f763b7d/5c6b888a-1343-4e13-9aba-32e63d808dd4/Client">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/GearClosetMain/templates/modals/modals.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/GearClosetMain/templates/Base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
-          <caret line="10" column="7" lean-forward="false" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
+          <caret line="10" column="90" lean-forward="false" selection-start-line="10" selection-start-column="90" selection-end-line="10" selection-end-column="90" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/testingSetup.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="29" column="15" lean-forward="false" selection-start-line="29" selection-start-column="15" selection-end-line="29" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/GCDB_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-887">
-          <caret line="38" column="23" lean-forward="true" selection-start-line="38" selection-start-column="23" selection-end-line="38" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/App/GearClosetMain/templates/GCmain.html" />
     <entry file="file://$PROJECT_DIR$/App/GearClosetMain/templates/testAJAX.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="11" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/GearClosetMain/templates/invCheckout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="19" lean-forward="false" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/GearClosetMain/templates/selectClient.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="19" lean-forward="false" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/GearClosetMain/templates/modals/createClientPopUp.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/static/GearClosetMain/tableControl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="39" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/GearClosetMain/templates/modals/BackpackPopUp.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="29" lean-forward="true" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/GearClosetMain/templates/modals/itemCheckoutPop.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="19" column="44" lean-forward="true" selection-start-line="19" selection-start-column="44" selection-end-line="19" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/GearClosetMain/templates/modals/CheckoutModal.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="358">
+          <caret line="49" column="89" lean-forward="false" selection-start-line="49" selection-start-column="89" selection-end-line="49" selection-end-column="89" />
         </state>
       </provider>
     </entry>
@@ -1055,32 +1085,43 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/App/InventoryMangment/__init__.py">
+    <entry file="file://$PROJECT_DIR$/tests/testingSetup.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="405">
+          <caret line="29" column="15" lean-forward="false" selection-start-line="29" selection-start-column="15" selection-end-line="29" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testGC.db">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-365">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/App/static/sideBar.js" />
-    <entry file="file://$PROJECT_DIR$/App/static/sideBarStyle.css">
+    <entry file="file://$PROJECT_DIR$/App/GearClosetMain/controlers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="296" column="0" lean-forward="false" selection-start-line="296" selection-start-column="0" selection-end-line="296" selection-end-column="0" />
+        <state relative-caret-position="412">
+          <caret line="79" column="4" lean-forward="false" selection-start-line="79" selection-start-column="4" selection-end-line="79" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/App/static/cartCounter.css">
+    <entry file="file://$PROJECT_DIR$/tests/inventoryGC.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="15" lean-forward="true" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="15" />
+        <state relative-caret-position="136">
+          <caret line="0" column="23916" lean-forward="false" selection-start-line="0" selection-start-column="23908" selection-end-line="0" selection-end-column="23916" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/App/GearClosetMain/templates/sideBarTest.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="945">
-          <caret line="63" column="33" lean-forward="true" selection-start-line="63" selection-start-column="33" selection-end-line="63" selection-end-column="33" />
+    <entry file="dbDummy://dbtable:/f763b7d/5c6b888a-1343-4e13-9aba-32e63d808dd4/checkedOut">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1096,116 +1137,59 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/App/static/sideBarScript.js">
+    <entry file="file://$PROJECT_DIR$/App/InventoryMangment/controlers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="30" column="3" lean-forward="false" selection-start-line="30" selection-start-column="3" selection-end-line="30" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="2" selection-end-line="25" selection-end-column="30" />
+        <state relative-caret-position="1815">
+          <caret line="125" column="43" lean-forward="false" selection-start-line="125" selection-start-column="43" selection-end-line="125" selection-end-column="43" />
           <folding>
-            <element signature="e#0#15#0" expanded="false" />
+            <element signature="e#0#103#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GCDatabaseMangment/InventroyForms.py">
+    <entry file="file://$PROJECT_DIR$/App/static/GearClosetMain/selectClient.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="21" column="20" lean-forward="false" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/GearClosetMain/templates/invCheckout.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
-          <caret line="33" column="46" lean-forward="false" selection-start-line="33" selection-start-column="46" selection-end-line="33" selection-end-column="46" />
-          <folding>
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/static/tableControl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="417">
-          <caret line="55" column="20" lean-forward="false" selection-start-line="55" selection-start-column="20" selection-end-line="55" selection-end-column="20" />
+        <state relative-caret-position="690">
+          <caret line="48" column="29" lean-forward="false" selection-start-line="48" selection-start-column="29" selection-end-line="48" selection-end-column="29" />
           <folding>
             <element signature="e#0#48#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/App/GearClosetMain/templates/modals.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/GearClosetMain/controlers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="71" column="21" lean-forward="false" selection-start-line="71" selection-start-column="21" selection-end-line="71" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/GearClosetMain/templates/Base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="41">
-          <caret line="17" column="7" lean-forward="false" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/GearClosetMain/templates/itemCheckoutPop.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="38" column="14" lean-forward="false" selection-start-line="38" selection-start-column="14" selection-end-line="38" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GCDatabaseMangment/GCDBUtilities.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="12" lean-forward="false" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/GCDatabaseMangment/GCDBSchema.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1050">
-          <caret line="71" column="34" lean-forward="false" selection-start-line="71" selection-start-column="34" selection-end-line="71" selection-end-column="34" />
-          <folding />
+        <state relative-caret-position="225">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="24" selection-end-column="56" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/GCDatabaseMangment/GCDBQuery.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
-          <caret line="8" column="20" lean-forward="false" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="20" />
+          <caret line="8" column="8" lean-forward="false" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/App/InventoryMangment/controlers.py">
+    <entry file="file://$PROJECT_DIR$/tests/GCDB_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="56" column="18" lean-forward="false" selection-start-line="56" selection-start-column="18" selection-end-line="56" selection-end-column="18" />
+        <state relative-caret-position="607">
+          <caret line="201" column="37" lean-forward="false" selection-start-line="201" selection-start-column="37" selection-end-line="201" selection-end-column="37" />
           <folding>
-            <element signature="e#0#104#0" expanded="true" />
+            <element signature="e#0#35#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="24" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>

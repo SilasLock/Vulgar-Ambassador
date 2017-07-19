@@ -1,5 +1,6 @@
 from flask_sqlalchemy import SQLAlchemy
 from GCDatabaseMangment.GCDBQuery import inventoryMangment
+import datetime
 db = SQLAlchemy()
 
 class Inventory(db.Model):
@@ -22,12 +23,15 @@ class Inventory(db.Model):
         self.price = form['itemPrice']
         self.category = form['itemCategory']
         self.processing = form['itemProcessingRequired']
-#https://stackoverflow.com/questions/7102754/jsonify-a-sqlalchemy-result-set-in-flask?noredirect=1&lq=1
+
     @property
     def serializeTable(self):
-        """Return object data in easily serializeable format"""
+        """ Return object data in easily serializeable format
+            https://stackoverflow.com/questions/7102754/jsonify-a-sqlalchemy-result-set-in-flask?noredirect=1&lq=1
+        """
         return {
             'id': self.id,
+            # Lol this is a total hack but it works so whatever
             'itemName': "<span class='itemName'"+ " id="+str(self.id) +"><a  href='#'>" + self.itemName + "</a></span>",#create tag for later use as jquery identifyer
             'itemQuantity': self.quantityAvailable,
             'itemQuantityOut': self.quantityOut,
@@ -35,6 +39,7 @@ class Inventory(db.Model):
             'itemCatagory' : self.category,
             'itemProcessingRequired' : self.processing
             }
+
     @property
     def serializePopUp(self):
         return{
@@ -65,11 +70,13 @@ class checkedOut(db.Model):
     # above defines the Many to one relationship of Client and checkedOut
     inventory = db.Column(db.Integer, db.ForeignKey("Inventory.id"))
     numberOut = db.Column(db.Integer)
+    dateCheckedOut = db.Column(db.Date)
 
-    def __init__(self, studentID, inventoryID, numberOut=1):
+    def __init__(self, studentID, inventoryID, numberOut=1, date=datetime.date.today()):
         self.clientCheckoutID = studentID
         self.inventory = inventoryID
         self.numberOut = numberOut
+        self.dateCheckedOut = date
 
 
 
@@ -84,13 +91,25 @@ class Client(db.Model):
     gearOut = db.relationship("checkedOut")# Defines the one to Many relationship of Client and checkedOut
 
     def __init__(self, user):
-        self.name = user['name']
+        self.name = user['clientName']
         self.phoneNumber = user['phoneNumber']
-        self.email = user['email']
+        self.email = user['emailAddress']
         self.studentID = user['studentID']
-        self.employee = False #TODO: Add classifer to detrmine if employee or nah
+        self.employee = user['Employee']
 
-
+    @property
+    def serializeTable(self):
+        """ Return object data in easily serializeable format
+            https://stackoverflow.com/questions/7102754/jsonify-a-sqlalchemy-result-set-in-flask?noredirect=1&lq=1
+        """
+        return {
+            'id': self.id,
+            'clientName': "<span class='clientName'" + " id="+str(self.id) +"><a  href='#'>" + self.name + "</a></span>",
+            'clientPhoneNumber': self.phoneNumber,
+            'clientEmail': self.email,
+            'clientStudentId' : self.studentID,
+            'clientEmployee' : self.employee
+            }
 
 class Category(db.Model):
     __tablename__ = "Category"
