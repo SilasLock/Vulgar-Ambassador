@@ -2,23 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1d1a120b-e78a-405c-9515-e7e0ccf48b88" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/App/GearClosetMain/templates/Clients.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/App/GearClosetMain/templates/checkOuts.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/App/static/GearClosetMain/Clients.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/dataSources/5c6b888a-1343-4e13-9aba-32e63d808dd4.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/App/static/jquery.dynatable.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/App/static/jquery.dynatable.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testGC.db" afterPath="$PROJECT_DIR$/testGC.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Gear-Closet.iml" afterPath="$PROJECT_DIR$/.idea/Gear-Closet.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/GearClosetMain/controlers.py" afterPath="$PROJECT_DIR$/App/GearClosetMain/controlers.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/GearClosetMain/templates/selectClient.html" afterPath="$PROJECT_DIR$/App/GearClosetMain/templates/selectClient.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/InventoryMangment/controlers.py" afterPath="$PROJECT_DIR$/App/InventoryMangment/controlers.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/__init__.py" afterPath="$PROJECT_DIR$/App/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GCDatabaseMangment/GCDBSchema.py" afterPath="$PROJECT_DIR$/GCDatabaseMangment/GCDBSchema.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GCDatabaseMangment/InventroyForms.py" afterPath="$PROJECT_DIR$/GCDatabaseMangment/InventroyForms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/GCDB_test.py" afterPath="$PROJECT_DIR$/tests/GCDB_test.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -892,6 +876,14 @@
       <option name="presentableId" value="Default" />
       <updated>1492901773053</updated>
     </task>
+    <task id="LOCAL-00001" summary="changes">
+      <created>1500682075048</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1500682075048</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -985,6 +977,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="changes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1213,6 +1209,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1220,6 +1217,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3162">
           <caret line="186" column="0" lean-forward="false" selection-start-line="186" selection-start-column="0" selection-end-line="186" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#35#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1244,6 +1244,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="32" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>
