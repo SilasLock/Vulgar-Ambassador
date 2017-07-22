@@ -184,6 +184,7 @@ class Database_Use_Tests(TestCase):
         checkOutItem = Inventory.query.filter_by(itemName=checoutItemName).first()
         print(jsonify(checkOutItem.serializePopUp))
         self.assertEqual(True, True)
+
     def test_checkInItemFromInventoryProcessing(self):
         """
     def __init__(self, form):

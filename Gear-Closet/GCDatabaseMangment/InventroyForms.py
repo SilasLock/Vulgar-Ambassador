@@ -27,7 +27,7 @@ class Checkout(FlaskForm):
 class CreateClient(FlaskForm):
     clientName = StringField("Client Name", [validators.DataRequired("Please Provide the name of the item")])
     studentID = IntegerField("student ID", [validators.DataRequired("Please Enter student ID")])
-    emailAdress = StringField("Client Email", [validators.DataRequired("Please enter email adress")])
+    emailAddress = StringField("Client Email", [validators.DataRequired("Please enter email adress")])
     phoneNumber = IntegerField("Client Phone Number", [validators.DataRequired("Please provide a client phone number")])
     Employee = BooleanField("Are they an Employee")
     submit = SubmitField("Add Client")

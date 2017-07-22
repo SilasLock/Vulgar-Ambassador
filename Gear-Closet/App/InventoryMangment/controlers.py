@@ -53,6 +53,10 @@ def getInv():
     invList = Inventory.query.all()
     return jsonify(data=[i.serializeTable for i in invList])
 
+@InvMangment.route("/getClientsMain")
+def getClientsMain():
+    ClientList = Client.query.all()
+    return jsonify(data=[i.serializeTableClients for i in ClientList])
 
 @InvMangment.route("/getClients")
 def getClients():

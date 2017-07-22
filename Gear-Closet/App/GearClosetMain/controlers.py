@@ -79,3 +79,7 @@ def itemPopUp():
 @GCInv.route("/selectClient", methods=['POST', 'GET'])
 def selectClient():
     return render_template("selectClient.html")
+
+@GCInv.route("/clients")
+def clients():
+    return render_template("Clients.html")

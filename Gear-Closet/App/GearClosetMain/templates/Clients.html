@@ -1,7 +1,7 @@
 {% extends "Base.html" %}
 
 {% block head %}
-<script src="static/GearClosetMain/selectClient.js"></script>
+<script src="static/GearClosetMain/Clients.js"></script>
 {%endblock%}
 
 {% block modal %}{% endblock %}
@@ -16,18 +16,19 @@
     <div class='btn-toolbar pull-right' >
         <button type="button" class="btn btn-primary" id="AddClient">Add Client</button>
     </div>
-   <h3>Select Client</h3>
+   <h3>Clients</h3>
 </div>
 <div class="row">
     <table class="table table-hover" id="ClientTable">
         <thead>
-            <th style="color: black;">clientName</th>
-            <th>clientStudentId</th>
+            <th>Name</th>
+            <th>Student ID</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>Items Checked Out</th>
         </thead>
         <tbody>
         </tbody>
     </table>
 </div>
-
-
 {% endblock %}

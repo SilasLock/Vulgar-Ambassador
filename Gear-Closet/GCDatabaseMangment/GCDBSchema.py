@@ -102,9 +102,22 @@ class Client(db.Model):
         """ Return object data in easily serializeable format
             https://stackoverflow.com/questions/7102754/jsonify-a-sqlalchemy-result-set-in-flask?noredirect=1&lq=1
         """
+        data = self.serializeTableClean
+        data['clientName'] = "<span class='clientName'" + " id="+str(self.id) +"><a  href='#'>" + self.name + "</a></span>"
+        return data
+
+    @property
+    def serializeTableClients(self):
+        data = self.serializeTableClean
+        data.pop("clientEmployee", None)
+        data["button"] = """<a href="#" class="btn btn-sm btn-success" id="""+ self.id +"""><span class="glyphicon glyphicon-shopping-cart"></span></a>"""
+        return data
+
+    @property
+    def serializeTableClean(self):
         return {
             'id': self.id,
-            'clientName': "<span class='clientName'" + " id="+str(self.id) +"><a  href='#'>" + self.name + "</a></span>",
+            'clientName': self.name,
             'clientPhoneNumber': self.phoneNumber,
             'clientEmail': self.email,
             'clientStudentId' : self.studentID,
