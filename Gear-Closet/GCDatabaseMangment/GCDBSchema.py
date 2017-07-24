@@ -71,12 +71,26 @@ class checkedOut(db.Model):
     inventory = db.Column(db.Integer, db.ForeignKey("Inventory.id"))
     numberOut = db.Column(db.Integer)
     dateCheckedOut = db.Column(db.Date)
+    dateDue = db.Column(db.Date)
 
-    def __init__(self, studentID, inventoryID, numberOut=1, date=datetime.date.today()):
+    def __init__(self, studentID, inventoryID, numberOut=1, date=datetime.date.today(), dateDue=datetime.date.today() + datetime.timedelta(days=7)):
         self.clientCheckoutID = studentID
         self.inventory = inventoryID
         self.numberOut = numberOut
         self.dateCheckedOut = date
+        self.dateDue = dateDue
+
+    # @property
+    def serializeTable(self, client, item):
+        return {
+            "id": str(self.id),
+            "studentID": str(self.clientCheckoutID),
+            "inventoryID": str(self.inventory),
+            "numberOut": str(self.numberOut),
+            "dateCheckedOut": str(self.dateCheckedOut),
+            "clientName": str(client.name),
+            "itemName": str(item.itemName)
+        }
 
 
 

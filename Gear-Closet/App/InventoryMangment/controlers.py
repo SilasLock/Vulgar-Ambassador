@@ -78,6 +78,10 @@ def getBackpack():
             tableData += data
         return jsonify(data=tableData)
 
+@InvMangment.route("/getCheckout")
+def getCheckout():
+    checkoutList = checkedOut.query.all()
+    return jsonify(data=[i.serializeTable(client=Client.query.filter_by(studentID=i.clientCheckoutID).first(), item=Inventory.query.filter_by(id=i.inventory).first()) for i in checkoutList])
 
 @InvMangment.route("/getItem/<int:itemID>", methods=['POST', 'GET'])
 def getItem(itemID):

@@ -80,6 +80,12 @@ def itemPopUp():
 def selectClient():
     return render_template("selectClient.html")
 
+
 @GCInv.route("/clients")
 def clients():
     return render_template("Clients.html")
+
+
+@GCInv.route("/checkedOut")
+def checkedOut():
+    return render_template("checkOuts.html")
