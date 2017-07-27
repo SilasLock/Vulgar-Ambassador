@@ -43,22 +43,50 @@ class inventoryMangment(BaseQuery):
         Schema.db.session.add(checkedOutItem)
         Schema.db.session.commit()
 
-    def checkItemIn(self, client, Itemid):
+    def checkItemIn(self, client, Itemid, numberReturned):#TODO: test me
         """
         will remove row form checkedOut table
         if gear requires processing it will move it into the processing table
         else it will update the inventory table to reflect returned gear
         :return:
         """
-        pass
+        clientID = client.studentID  # pass a real cleint object
+        item = Schema.Inventory.query.filter_by(id=Itemid).first()  # gets the item from db
 
-    def processItem(self, Itemid):
+        checkoutData = Schema.checkedOut.query.filter_by(clientCheckoutID=clientID, inventory=item.id)
+        numOut = checkoutData.first().numberOut
+        if item.processing:
+            for i in range(numberReturned):
+                Schema.db.session.add(Schema.Processing(item=item, clientID=clientID))
+            item.quantityOut -= numberReturned
+            item.quantityInProcessing += numberReturned
+        else:  # simply release the item
+            item.quantityOut -= numberReturned
+            item.quantityAvailable += numberReturned
+        if numberReturned == numOut:
+            checkoutData.delete()  # since checkoutData is a query we can delete it here
+        else:
+            checkoutData.first().numberOut -= numberReturned
+
+        # Sanity checks
+        assert checkoutData.first().numberOut > 0
+        assert item.quantityOut > 0
+        assert item.quantityAvailable > 0
+
+
+    def processItem(self, Itemid, clientID):
         """
         will remove item from processing table and update inventory to reflect
         item is now ready to go out
         :param Itemid:
-        :return:
+        :return: void
         """
-        pass
+        item = Schema.Inventory.query.filter_by(id=Itemid).first()  # gets the item from db
+        processItem = Schema.query.filter_by(inventoryID=Itemid, clientID=clientID).first()
+        item.quantityInProcessing -= 1
+        item.quantityAvailable += 1
+        Schema.db.session.delete(processItem)
+
+
 
     #TODO: change processing schema to include client ID so we can charge them if it is v broken

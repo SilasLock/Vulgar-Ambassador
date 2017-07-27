@@ -10,6 +10,7 @@ class Inventory(db.Model):
     itemName = db.Column(db.String(120))#name
     quantityAvailable = db.Column(db.Integer)# Number avalible to checkout
     quantityOut = db.Column(db.Integer)# Number out of inv
+    quantityInProcessing = db.Column(db.Integer)
     processing = db.Column(db.Boolean)# This indicates if the gear needs to be checked over before returing
     price = db.Column(db.Integer)# How much we will charge people when they dont give us shit back
     category = db.Column(db.String(120), db.ForeignKey("Category.categoryName"))# will be used to sort gear for future applicatons
@@ -20,6 +21,7 @@ class Inventory(db.Model):
         self.itemName = form['itemName']
         self.quantityAvailable = form['itemQuantity']
         self.quantityOut = 0
+        self.quantityInProcessing = 0
         self.price = form['itemPrice']
         self.category = form['itemCategory']
         self.processing = form['itemProcessingRequired']
@@ -58,8 +60,19 @@ class Processing(db.Model):
     __tablename__ = "Processing"
     id = db.Column(db.Integer, primary_key=True)
     itemName = db.Column(db.String(120))  # name
+    clientID = db.Column(db.Integer)
     itemCheckingTime =  db.Column(db.DateTime)
     inventoryID = db.Column(db.Integer, db.ForeignKey("Inventory.id"))
+
+    def __init__(self, item, clientID, checkInTime=datetime.datetime.today()):
+        """
+        :param item: instance of the Inventory class
+        """
+        self.itemName = item.itemName
+        self.itemCheckingTime = checkInTime
+        self.inventoryID = item.id
+        self.clientID = clientID
+
 
 
 class checkedOut(db.Model):
