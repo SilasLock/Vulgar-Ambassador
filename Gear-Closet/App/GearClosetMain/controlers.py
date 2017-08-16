@@ -89,3 +89,8 @@ def clients():
 @GCInv.route("/checkedOut")
 def checkedOut():
     return render_template("checkOuts.html")
+
+
+@GCInv.route("/mangeInventory", methods=['POST', 'GET'])
+def mangeInventory():
+    return render_template("invEdit.html")

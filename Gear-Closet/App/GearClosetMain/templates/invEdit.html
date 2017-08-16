@@ -1,0 +1,27 @@
+{% extends "Base.html" %}
+
+{% block head %}
+<script src="static/GearClosetMain/invEdit.js"></script>
+{%endblock%}
+
+{% block modal %}{% endblock %}
+{% include "modals/modals.html" %}
+<!--so some how this loads a modal whatever that is and then that allows us to do pop up stuff-->
+
+{% block cartIcon %}
+{% endblock %}
+
+{% block content %}
+   <h3 >Inventory Management</h3>
+        <table class="table table-hover" id="invTable">
+          <thead>
+            <th>Item Name</th>
+            <th>Item Category</th>
+            <th>Quantity Available</th>
+            <th>Quantity Out</th>
+            <th>Price</th>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+{% endblock %}
