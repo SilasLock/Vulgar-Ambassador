@@ -1,8 +1,5 @@
-import os, json
-from GCDatabaseMangment.InventroyForms import AddGeartoInv
 from flask import  request, redirect, url_for, \
-     render_template, flash,Blueprint, jsonify, session
-from GCDatabaseMangment.GCDBSchema import db, Inventory, Processing, Client, Category, checkedOut
+     render_template, flash, Blueprint, jsonify, session
 GCInv = Blueprint('GCInv', __name__, template_folder='templates')
 
 

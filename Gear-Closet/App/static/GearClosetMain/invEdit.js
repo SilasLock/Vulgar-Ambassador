@@ -33,11 +33,17 @@ function CreateTable(tableID) {
                 "data": "itemPrice"
             }
         ]
-        //, "initComplete": function() {
-        //     bindModal(dataType);
-        // }
-    })
-    // $("#" + tableID + " tbody").on('click', 'tr', function() {
-    //     getModal(table.row(this).data().id);
-    // });
+    });
+    $("#" + tableID + " tbody").on('click', 'tr', function() {
+        getModal(table.row(this).data().id);
+    });
+}
+
+function getModal(id) {
+    console.log(id);
+    $.get('/api/editItem/' + id)
+    .done(function(data) {
+            $('#message-model-content').html(data);
+            $('#user1Message').modal('show');
+          });
 }
