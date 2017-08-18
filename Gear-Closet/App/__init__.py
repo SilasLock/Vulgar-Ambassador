@@ -1,9 +1,10 @@
 import os, json
-from GCDatabaseMangment.GCDBSchema import Inventory
+from GCDatabaseMangment.GCDBSchema import Inventory, Category
 from App.GearClosetMain.controlers import GCInv
 from App.InventoryMangment.controlers import InvMangment
 from flask import Flask, session
 from flask_bootstrap import Bootstrap
+from sqlalchemy import exists
 
 from GCDatabaseMangment.GCDBSchema import db
 
@@ -15,12 +16,26 @@ app.config.update(dict(SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.getcwd() + '/
 # print("app config set")
 Bootstrap(app)
 db.init_app(app)
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> origin/master
 # with app.app_context():
 #     db.create_all()
 #     print(os.curdir)
 #     with open(os.curdir + '/tests/inventoryGC.json') as data_file:
 #         data = json.load(data_file)
 #     for item in data['data'].values():
+<<<<<<< HEAD
+=======
+#         try:
+#             cat = Category(category=item['itemCategory'])
+#             db.session.add(cat)
+#             db.session.commit()
+#         except:
+#             db.session.rollback()
+>>>>>>> origin/master
 #         temp = Inventory(item)
 #         db.session.add(temp)
 #     db.session.commit()

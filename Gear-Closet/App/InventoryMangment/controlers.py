@@ -1,7 +1,7 @@
 from flask import request, redirect, url_for, \
     render_template, flash, Blueprint, jsonify, session
 from GCDatabaseMangment.GCDBSchema import db, Inventory, Processing, Client, Category, checkedOut
-from GCDatabaseMangment.InventroyForms import Checkout, CreateClient
+from GCDatabaseMangment.InventroyForms import Checkout, CreateClient, HandleItem
 import json
 
 InvMangment = Blueprint('InvMangment', __name__, template_folder='templates')
@@ -38,9 +38,20 @@ def editPrice():
     pass
 
 
-@InvMangment.route("/editCatagory")
-def editCatagory():
-    pass
+@InvMangment.route("/editItem/<int:itemID>", methods=['POST', 'GET'])
+def editItem(itemID):
+    item = Inventory.query.filter_by(id=itemID).first()
+    choices = [(category.id, category.categoryName) for category in Category.query.all()]
+    form = HandleItem(itemName=item.itemName, itemQuantity=item.quantityAvailable, itemOut=item.quantityOut,
+                      itemPrice=item.price, itemProcessingRequired=item.processing)
+    form.itemCategory.choices = choices
+    form.itemCategory.default = Category.query.filter_by(categoryName=item.category).first().id
+    form.process()
+    if request.method == 'POST':
+        print(form.data)
+        return redirect(url_for('GCInv.table'))
+    elif request.method == 'GET':  # this route should only be called internally
+        return render_template("modals/editItemPopUp.html", item=item, form=form)
 
 
 @InvMangment.route("/addCatagory", methods=['GET', 'POST'])

@@ -1,19 +1,38 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, IntegerField, SubmitField, validators, SelectField, BooleanField, ValidationError
+from GCDatabaseMangment.GCDBSchema import Category
+
+class CheckDigit(object):
+    def __init__(self, message=None):
+        if not message:
+            message = "Please enter a non-negative integer."
+        self.message = message
+
+    def __call__(self, form, field):
+        if field.data.isdigit() == False:
+            raise validators.ValidationError(self.message)
+        if int(field.data) < 0:
+            # Don't you dare change this to an elif statement, or combine into a single if statement! It will break if you do!
+            raise validators.ValidationError(self.message)
 
 
-class AddGeartoInv(FlaskForm):
+class HandleItem(FlaskForm):
     itemName = StringField("Item Name", [validators.DataRequired("Please Provide the name of the item")])
-    itemQuantity = IntegerField("Item Quantity", [validators.DataRequired("Please Enter how many you wish to add")])
-    itemPrice = IntegerField("Item Price", [validators.DataRequired("Please Enter how much this costs")])
+    itemQuantity = StringField("Item Quantity", [validators.DataRequired("Please Enter how many you wish to add"),
+                                                  CheckDigit()])
+    itemOut = StringField("Item Number Checkedout", [validators.DataRequired("Please enter how many items are "
+                                                                             "checkout currently"), CheckDigit()])
+    itemPrice = StringField("Item Price", [validators.DataRequired("Please Enter how much this costs"), CheckDigit()])
     itemCategory = SelectField(label="Catagory", choices=[], validators=[validators.DataRequired("Please Select a catagory")])
     itemProcessingRequired = BooleanField("Requires Additional Checking Processing")
-    submit = SubmitField("Add Item")
+    submit = SubmitField("Handle Item")
+
 
 #Custom Validators
 def check_positive(form, field):
     if int(field.data) > 0:
         raise ValidationError('must checkout atleast 1 and no negatives')
+
 
 
 
@@ -24,6 +43,7 @@ class Checkout(FlaskForm):
     numberToCheckout = SelectField("Number to check out", choices=[(0,0)])
     submit = SubmitField("Add to Pack")
 
+
 class CreateClient(FlaskForm):
     clientName = StringField("Client Name", [validators.DataRequired("Please Provide the name of the item")])
     studentID = IntegerField("student ID", [validators.DataRequired("Please Enter student ID")])
@@ -31,3 +51,4 @@ class CreateClient(FlaskForm):
     phoneNumber = IntegerField("Client Phone Number", [validators.DataRequired("Please provide a client phone number")])
     Employee = BooleanField("Are they an Employee")
     submit = SubmitField("Add Client")
+

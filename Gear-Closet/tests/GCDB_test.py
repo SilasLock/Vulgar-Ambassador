@@ -19,7 +19,7 @@ Inputs = {
     }
 Expected = {
 'addItemExpected': {'itemName': 'Arcteryx  Hoddie', 'quantityAvailable': 3, 'category': 'Clothes', 'price': 250,
-                    'processing': True, 'quantityOut':0}
+                    'processing': True, 'quantityOut':0, 'quantityInProcessing': 0,}
 }
 
 
@@ -200,7 +200,7 @@ class Database_Use_Tests(TestCase):
         itemWithoutProcessing = Inventory(Inputs["itemWithoutProcessingForm"])
         db.session.add(itemWithoutProcessing)
         db.session.add(itemWithProcessing)
-        Inventory.query.checkItemOut()
+        # Inventory.query.checkItemOut()
 
 
 

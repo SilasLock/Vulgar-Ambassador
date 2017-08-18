@@ -170,6 +170,9 @@ class Category(db.Model):
     categoryName = db.Column(db.String(120), nullable=False, unique=True)
     relationship = db.relationship("Inventory")
 
+    def __init__(self, category):
+        self.categoryName = category
+
 
 
 

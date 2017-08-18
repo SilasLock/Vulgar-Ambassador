@@ -1,8 +1,5 @@
-import os, json
-from GCDatabaseMangment.InventroyForms import AddGeartoInv
 from flask import  request, redirect, url_for, \
-     render_template, flash,Blueprint, jsonify, session
-from GCDatabaseMangment.GCDBSchema import db, Inventory, Processing, Client, Category, checkedOut
+     render_template, flash, Blueprint, jsonify, session
 GCInv = Blueprint('GCInv', __name__, template_folder='templates')
 
 
@@ -85,7 +82,18 @@ def clients():
     return render_template("Clients.html")
 
 
+<<<<<<< HEAD
 @GCInv.route("/checkInGear")
 def checkInGear():
     return render_template("checkOuts.html")
 
+=======
+@GCInv.route("/checkedOut")
+def checkedOut():
+    return render_template("checkOuts.html")
+
+
+@GCInv.route("/mangeInventory", methods=['POST', 'GET'])
+def mangeInventory():
+    return render_template("invEdit.html")
+>>>>>>> origin/master
