@@ -64,14 +64,13 @@ def index():
     return render_template('testAJAX.html')
 
 
-@GCInv.route("/table", methods=['POST', 'GET'])
-def table():
+@GCInv.route("/checkoutGear", methods=['POST', 'GET'])
+def checkoutGear():
     if "backpack" not in session:
         session["backpack"] = []
     return render_template('invCheckout.html')
 
-
-@GCInv.route("/itemPopUp")
+@GCInv.route("/itemPopUp")#TODO: MOVE to API I think check it out
 def itemPopUp():
     return render_template("itemCheckoutPop.html")
 
@@ -86,6 +85,7 @@ def clients():
     return render_template("Clients.html")
 
 
-@GCInv.route("/checkedOut")
-def checkedOut():
+@GCInv.route("/checkInGear")
+def checkInGear():
     return render_template("checkOuts.html")
+

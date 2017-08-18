@@ -1,0 +1,32 @@
+<div class="modal-body" id="message-model-content">
+    <h4 class="display-4"><strong>Items Checked Out by {{name}}</strong></h4>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <td>Return</td>
+                <td>Item Name</td>
+                <td>Item Quantity</td>
+            </tr>
+        </thead>
+        <tbody>
+        <!--items needs to be a dict that has items with the number this client has out and
+        the item name-->
+        {% for item in items %}
+            <tr>
+                <td>
+                    <input type="checkbox" class="custom-control-input">
+                    <span class="custom-control-indicator"></span>
+                    <span class="custom-control-description">Check this custom checkbox</span>
+                </td>
+                <td>{{item["itemName"]}}</td>
+                <td>{{item["numToCheckout"]}}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+
+    </table>
+</div>
+ <div class="modal-footer">
+     <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-hidden="true">Close</button>
+     <a class="btn btn-primary" href="#" role="button">Checkout</a>
+ </div>

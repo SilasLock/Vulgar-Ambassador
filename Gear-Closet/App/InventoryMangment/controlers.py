@@ -83,6 +83,11 @@ def getCheckout():
     checkoutList = checkedOut.query.all()
     return jsonify(data=[i.serializeTable(client=Client.query.filter_by(studentID=i.clientCheckoutID).first(), item=Inventory.query.filter_by(id=i.inventory).first()) for i in checkoutList])
 
+@InvMangment.route("/getClientsCheckedOut")
+def getClientsCheckedOut():
+    clientList = Client.query.all()
+    return jsonify(data=[i.serializeTable for i in clientList])
+
 @InvMangment.route("/getItem/<int:itemID>", methods=['POST', 'GET'])
 def getItem(itemID):
     item = Inventory.query.filter_by(id=itemID).first()
@@ -98,7 +103,7 @@ def getItem(itemID):
             session["backpack"] = [
                 {"itemName": item.itemName, "id": item.id, "numToCheckout": int(form.data['numberToCheckout'])}]
         print(session["backpack"], len(session["backpack"]))
-        return redirect(url_for('GCInv.table'))
+        return redirect(url_for('GCInv.checkoutGear'))
     elif request.method == 'GET':  # this route should only be called internally
         return render_template("modals/itemCheckoutPop.html", item=item, form=form)
 
@@ -123,6 +128,24 @@ def getClientPopUp():
     elif request.method == 'GET':  # this route should only be called internally
         return render_template("modals/createClientPopUp.html", form=form)
 
+@InvMangment.route("/getClientsCheckedoutItems/<int:Clientid>")
+def getClientsCheckedoutItems(Clientid):
+    client = Client.query.filter_by(id=Clientid).first()
+    itemsOut = checkedOut.query.filter_by(clientCheckoutID=client.studentID).all()
+    itemsOutDictList = []
+    for item in itemsOut:
+        inventoryData =  Inventory.query.filter_by(id=item.inventory).first()
+        d = {
+            "itemName" : inventoryData.itemName,
+            "numToCheckout" : item.numberOut
+        }
+        itemsOutDictList += [d]
+    print(itemsOutDictList)
+    print(itemsOut)
+    return render_template("modals/CheckInModal.html", items=itemsOutDictList, name=client.name)
+
+
+
 
 @InvMangment.route("/checkout/<int:Clientid>")
 def checkout(Clientid):
@@ -131,7 +154,7 @@ def checkout(Clientid):
     for item in cart:
         Inventory.query.checkItemOut(client=client, Itemid=item["id"], ItemNum=item["numToCheckout"])
     session.pop("backpack", None)
-    return redirect(url_for('GCInv.table'))
+    return redirect(url_for('GCInv.checkoutGear'))
 
 
 @InvMangment.route("/selectClient/<int:Clientid>")

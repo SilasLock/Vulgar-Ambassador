@@ -104,6 +104,7 @@ class checkedOut(db.Model):
             "clientName": str(client.name),
             "itemName": str(item.itemName)
         }
+    # def serializeForCheckin(self):
 
 
 
@@ -115,6 +116,7 @@ class Client(db.Model):
     email = db.Column(db.String(120))# to send info about gear out and late gear
     phoneNumber = db.Column(db.Integer)# for contacting for late returns
     employee = db.Column(db.Boolean)# Lets keep track of who employees are
+    numberCheckedOut = db.Column(db.Integer)
     gearOut = db.relationship("checkedOut")# Defines the one to Many relationship of Client and checkedOut
 
     def __init__(self, user):
@@ -123,6 +125,7 @@ class Client(db.Model):
         self.email = user['emailAddress']
         self.studentID = user['studentID']
         self.employee = user['Employee']
+        self.numberCheckedOut = 0
 
     @property
     def serializeTable(self):
@@ -137,7 +140,16 @@ class Client(db.Model):
     def serializeTableClients(self):
         data = self.serializeTableClean
         data.pop("clientEmployee", None)
-        data["button"] = """<a href="#" class="btn btn-sm btn-success" id="""+ self.id +"""><span class="glyphicon glyphicon-shopping-cart"></span></a>"""
+        data["button"] = """<a href="#" class="btn btn-sm btn-success" id="""+ str(self.id) + "viewOrders" +"""><span class="glyphicon glyphicon-shopping-cart"></span></a>""" \
+        + """<a href="#" class="btn btn-sm btn-primary" id="""+  str(self.id) + "editUser" +"""><span class="glyphicon glyphicon-cog"></span></a>"""
+        return data
+
+    @property
+    def serializeCheckIn(self):
+        """ Return object data in easily serializeable format
+            https://stackoverflow.com/questions/7102754/jsonify-a-sqlalchemy-result-set-in-flask?noredirect=1&lq=1
+        """
+        data = self.serializeTableClean
         return data
 
     @property
@@ -148,7 +160,8 @@ class Client(db.Model):
             'clientPhoneNumber': self.phoneNumber,
             'clientEmail': self.email,
             'clientStudentId' : self.studentID,
-            'clientEmployee' : self.employee
+            'clientEmployee' : self.employee,
+            'numberCheckedOut' : self.numberCheckedOut
             }
 
 class Category(db.Model):

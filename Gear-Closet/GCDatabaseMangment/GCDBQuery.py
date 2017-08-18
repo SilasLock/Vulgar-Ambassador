@@ -16,7 +16,7 @@ class inventoryMangment(BaseQuery):
         """
         clientID = client.studentID #pass a real cleint object
         item = Schema.Inventory.query.filter_by(id=Itemid).first()  # gets the item from db
-
+        client.numberCheckedOut += ItemNum
         if item.processing:
             for x in range(ItemNum):
                 # Checks out item creating individual checkout for each of the items checked out
@@ -51,6 +51,7 @@ class inventoryMangment(BaseQuery):
         :return:
         """
         clientID = client.studentID  # pass a real cleint object
+        client.numberCheckedOut -= numberReturned
         item = Schema.Inventory.query.filter_by(id=Itemid).first()  # gets the item from db
 
         checkoutData = Schema.checkedOut.query.filter_by(clientCheckoutID=clientID, inventory=item.id)

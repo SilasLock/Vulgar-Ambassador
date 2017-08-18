@@ -18,32 +18,33 @@ $(document).ready(function () {
 function CreateTable(tableID) {
     var table = $("#" + tableID).DataTable({ //targets table and creates table
         "ajax": {
-            "url": "/api/getCheckout"
+            "url": "/api/getClientsCheckedOut"
         },
-        "columns": [{
+        "columns": [
+            {
                 "data": "clientName"
             },
             {
-                "data": "studentID"
+                "data": "clientStudentId"
             },
             {
-                "data" : "itemName"
+                "data" : "clientEmail"
             },
             {
-                "data" : "numberOut"
+                "data" : "clientPhoneNumber"
             },
             {
-                "data" : "dateCheckedOut"
+                "data" : "numberCheckedOut"
             }
         ]
-        //, "initComplete": function() {
+        // , "initComplete": function() {
         //     bindModal(dataType);
         // }
     })
-//     $("#" + tableID + " tbody").on('click', 'tr', function() {
-//         getModal(table.row(this).data().id);
-//     });
-// }
+    $("#" + tableID + " tbody").on('click', 'tr', function() {
+        getModal(table.row(this).data().id);
+    });
+    }
 //
 // function makeClientAddPop(){
 //     console.log("clicked");
@@ -53,13 +54,15 @@ function CreateTable(tableID) {
 //             $('#user1Message').modal('show');
 //           })}
 //
-// function getModal(id) {
-//     console.log(id);
-//     $.get('/api/selectClient/' + id)
-//     .done(function(data) {
-//             $('#message-model-content').html(data);
-//             $('#user1Message').modal('show');
-//           });
-}/**
+function getModal(id) {
+    console.log(id);
+    $.get('/api/getClientsCheckedoutItems/' + id)
+    .done(function(data) {
+            $('#message-model-content').html(data);
+            $('#user1Message').modal('show');
+          });
+};
+
+/**
  * Created by ajohnson on 7/24/2017.
  */
