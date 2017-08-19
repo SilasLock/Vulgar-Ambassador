@@ -82,12 +82,11 @@ def clients():
     return render_template("Clients.html")
 
 
-<<<<<<< HEAD
 @GCInv.route("/checkInGear")
 def checkInGear():
     return render_template("checkOuts.html")
 
-=======
+
 @GCInv.route("/checkedOut")
 def checkedOut():
     return render_template("checkOuts.html")
@@ -96,4 +95,4 @@ def checkedOut():
 @GCInv.route("/mangeInventory", methods=['POST', 'GET'])
 def mangeInventory():
     return render_template("invEdit.html")
->>>>>>> origin/master
+

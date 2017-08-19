@@ -2,6 +2,7 @@ from flask import request, redirect, url_for, \
     render_template, flash, Blueprint, jsonify, session
 from GCDatabaseMangment.GCDBSchema import db, Inventory, Processing, Client, Category, checkedOut
 from GCDatabaseMangment.InventroyForms import Checkout, CreateClient, HandleItem
+from sqlalchemy import update
 import json
 
 InvMangment = Blueprint('InvMangment', __name__, template_folder='templates')
@@ -41,15 +42,32 @@ def editPrice():
 @InvMangment.route("/editItem/<int:itemID>", methods=['POST', 'GET'])
 def editItem(itemID):
     item = Inventory.query.filter_by(id=itemID).first()
-    choices = [(category.id, category.categoryName) for category in Category.query.all()]
+    choices = [(category.categoryName, category.categoryName) for category in Category.query.all()]
+    HandleItem.itemCategory.choices = choices
     form = HandleItem(itemName=item.itemName, itemQuantity=item.quantityAvailable, itemOut=item.quantityOut,
-                      itemPrice=item.price, itemProcessingRequired=item.processing)
+                      itemPrice=item.price, itemProcessingRequired=item.processing,
+                      itemCategory=Category.query.filter_by(categoryName=item.category).first().categoryName)
     form.itemCategory.choices = choices
-    form.itemCategory.default = Category.query.filter_by(categoryName=item.category).first().id
-    form.process()
+    # form.itemCategory.process_data(Category.query.filter_by(categoryName=item.category).first().id)
     if request.method == 'POST':
-        print(form.data)
-        return redirect(url_for('GCInv.table'))
+        print(form.validate())
+        if form.validate():
+            flash("successfully updated", "success")
+            data = form.data
+            item.itemName=data["itemName"]
+            item.quantityAvailable=data['itemQuantity']
+            item.quantityOut=data['itemOut']
+            item.quantityInProcessing=0
+            item.price=data['itemPrice']
+            item.category=data['itemCategory']
+            item.processing=data['itemProcessingRequired']
+            # Inventory.query.filter_by(id=itemID).update().
+            # TODO: FIX ME
+            db.session.commit()
+            return redirect(url_for('GCInv.mangeInventory'))
+        else:
+            flash("we were unable to update form due to: " + str(form.errors), "warning")
+            return redirect(url_for('GCInv.mangeInventory'))
     elif request.method == 'GET':  # this route should only be called internally
         return render_template("modals/editItemPopUp.html", item=item, form=form)
 
@@ -64,10 +82,12 @@ def getInv():
     invList = Inventory.query.all()
     return jsonify(data=[i.serializeTable for i in invList])
 
+
 @InvMangment.route("/getClientsMain")
 def getClientsMain():
     ClientList = Client.query.all()
     return jsonify(data=[i.serializeTableClients for i in ClientList])
+
 
 @InvMangment.route("/getClients")
 def getClients():
@@ -89,15 +109,18 @@ def getBackpack():
             tableData += data
         return jsonify(data=tableData)
 
+
 @InvMangment.route("/getCheckout")
 def getCheckout():
     checkoutList = checkedOut.query.all()
     return jsonify(data=[i.serializeTable(client=Client.query.filter_by(studentID=i.clientCheckoutID).first(), item=Inventory.query.filter_by(id=i.inventory).first()) for i in checkoutList])
 
+
 @InvMangment.route("/getClientsCheckedOut")
 def getClientsCheckedOut():
     clientList = Client.query.all()
     return jsonify(data=[i.serializeTable for i in clientList])
+
 
 @InvMangment.route("/getItem/<int:itemID>", methods=['POST', 'GET'])
 def getItem(itemID):

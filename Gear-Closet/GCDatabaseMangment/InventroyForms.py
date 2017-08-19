@@ -2,28 +2,38 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, IntegerField, SubmitField, validators, SelectField, BooleanField, ValidationError
 from GCDatabaseMangment.GCDBSchema import Category
 
-class CheckDigit(object):
-    def __init__(self, message=None):
-        if not message:
-            message = "Please enter a non-negative integer."
-        self.message = message
+# def length(min=-1, max=-1):
+#     message = 'Must be between %d and %d characters long.' % (min, max)
+#
+#     def _length(form, field):
+#         l = field.data and len(field.data) or 0
+#         if l < min or max != -1 and l > max:
+#             raise ValidationError(message)
+#
+#     return _length
+#
+# class MyForm(Form):
+#     name = TextField('Name', [Required(), length(max=50)])
 
-    def __call__(self, form, field):
+def CheckDigit():
+    message = "Please enter a non-negative integer."
+    def _CheckDigit(form, field):
         if field.data.isdigit() == False:
-            raise validators.ValidationError(self.message)
+            raise validators.ValidationError(message)
         if int(field.data) < 0:
             # Don't you dare change this to an elif statement, or combine into a single if statement! It will break if you do!
-            raise validators.ValidationError(self.message)
+            raise validators.ValidationError(message)
+    return _CheckDigit
 
 
 class HandleItem(FlaskForm):
-    itemName = StringField("Item Name", [validators.DataRequired("Please Provide the name of the item")])
-    itemQuantity = StringField("Item Quantity", [validators.DataRequired("Please Enter how many you wish to add"),
-                                                  CheckDigit()])
-    itemOut = StringField("Item Number Checkedout", [validators.DataRequired("Please enter how many items are "
+    itemName = StringField("Item Name", validators=[validators.DataRequired("Please Provide the name of the item")])
+    itemQuantity = StringField("Item Quantity", validators=[validators.DataRequired("Please Enter how many you wish to add"),
+                                                 CheckDigit()])
+    itemOut = StringField("Item Number Checked out", validators=[validators.DataRequired("Please enter how many items are "
                                                                              "checkout currently"), CheckDigit()])
-    itemPrice = StringField("Item Price", [validators.DataRequired("Please Enter how much this costs"), CheckDigit()])
-    itemCategory = SelectField(label="Catagory", choices=[], validators=[validators.DataRequired("Please Select a catagory")])
+    itemPrice = StringField("Item Price", validators=[validators.DataRequired("Please Enter how much this costs"), CheckDigit()])
+    itemCategory = SelectField(label="Catagory")
     itemProcessingRequired = BooleanField("Requires Additional Checking Processing")
     submit = SubmitField("Handle Item")
 

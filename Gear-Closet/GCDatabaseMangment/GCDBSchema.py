@@ -17,7 +17,7 @@ class Inventory(db.Model):
     checkedOutRetationship = db.relationship("checkedOut")
     processingRelationship = db.relationship("Processing")
 
-    def __init__(self, form):
+    def __init__(self, form=None):
         self.itemName = form['itemName']
         self.quantityAvailable = form['itemQuantity']
         self.quantityOut = 0
