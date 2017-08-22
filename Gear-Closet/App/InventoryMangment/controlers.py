@@ -8,37 +8,6 @@ import json
 InvMangment = Blueprint('InvMangment', __name__, template_folder='templates')
 
 
-@InvMangment.route("/editItemName")
-def editItemName():
-    # for this id thing what we will do is give each row the id atibute of the item id in inv
-    id = request.args.get('itemID', 0, type=int)
-    newName = request.args.get('new_name_' + id, 0, type=int)
-    item = Inventory.query.filter_by(id=id).first()
-    item.itemName = newName
-    db.session.commit()
-    return Inventory.query.filter_by(id=id).first().itemName  # get the new name from the inventory
-
-
-@InvMangment.route("/editQuantityAvailable")
-def editQuanityAvalible():
-    pass
-
-
-@InvMangment.route("/editQuantityOut")
-def editQuantityOut():
-    pass
-
-
-@InvMangment.route("/editProcessing")
-def editProcessing():
-    pass
-
-
-@InvMangment.route("/editPrice")
-def editPrice():
-    pass
-
-
 @InvMangment.route("/editItem/<int:itemID>", methods=['POST', 'GET'])
 def editItem(itemID):
     item = Inventory.query.filter_by(id=itemID).first()
@@ -168,15 +137,21 @@ def getClientsCheckedoutItems(Clientid):
     itemsOut = checkedOut.query.filter_by(clientCheckoutID=client.studentID).all()
     itemsOutDictList = []
     for item in itemsOut:
-        inventoryData =  Inventory.query.filter_by(id=item.inventory).first()
+        inventoryData = Inventory.query.filter_by(id=item.inventory).first()
         d = {
             "itemName" : inventoryData.itemName,
-            "numToCheckout" : item.numberOut
+            "numCheckedOut" : item.numberOut,
+            "CheckoutID":item.id,
+            "ClientID":Clientid,
+            "InventoryID":inventoryData.id
+            # we are using checkout id here so that we dont have to deal with process items
+            # that have the same inv id but are dif checkout entries
         }
         itemsOutDictList += [d]
     print(itemsOutDictList)
     print(itemsOut)
-    return render_template("modals/CheckInModal.html", items=itemsOutDictList, name=client.name)
+    return jsonify(html=render_template("modals/CheckInModal.html", items=itemsOutDictList, name=client.name),
+                   data=itemsOutDictList)
 
 
 

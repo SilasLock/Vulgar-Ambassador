@@ -12,14 +12,14 @@
         <!--items needs to be a dict that has items with the number this client has out and
         the item name-->
         {% for item in items %}
-            <tr>
-                <td>
-                    <input type="checkbox" class="custom-control-input">
-                    <span class="custom-control-indicator"></span>
-                    <span class="custom-control-description">Check this custom checkbox</span>
+            <tr class="item">
+                <td class=itemCheckBox>
+                    <input type="checkbox" class="select" id="{{item['CheckoutID']}}">
+                    <!--<span class="custom-control-indicator"></span>-->
+                    <!--<span class="custom-control-description">Check this custom checkbox</span>-->
                 </td>
-                <td>{{item["itemName"]}}</td>
-                <td>{{item["numToCheckout"]}}</td>
+                <td class={{item["CheckoutID"]}}>{{item["itemName"]}}</td>
+                <td class={{item["CheckoutID"]}}><select class="form-control {{item['CheckoutID']}}" id="numberReturning"></select></td>
             </tr>
         {% endfor %}
         </tbody>
@@ -28,5 +28,5 @@
 </div>
  <div class="modal-footer">
      <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-hidden="true">Close</button>
-     <a class="btn btn-primary" href="#" role="button">Checkout</a>
+     <a class="btn btn-primary" id="checkIn" role="button">Check In</a>
  </div>

@@ -43,22 +43,23 @@ class inventoryMangment(BaseQuery):
         Schema.db.session.add(checkedOutItem)
         Schema.db.session.commit()
 
-    def checkItemIn(self, client, Itemid, numberReturned):#TODO: test me
+    def checkItemIn(self, clientID, Itemid, numberReturned):#TODO: test me
         """
         will remove row form checkedOut table
         if gear requires processing it will move it into the processing table
         else it will update the inventory table to reflect returned gear
         :return:
         """
-        clientID = client.studentID  # pass a real cleint object
+        client = Schema.Client.query.filter_by(id=clientID)
+        clientStudentID = client.studentID  # pass a real cleint object
         client.numberCheckedOut -= numberReturned
         item = Schema.Inventory.query.filter_by(id=Itemid).first()  # gets the item from db
 
-        checkoutData = Schema.checkedOut.query.filter_by(clientCheckoutID=clientID, inventory=item.id)
+        checkoutData = Schema.checkedOut.query.filter_by(clientCheckoutID=clientStudentID, inventory=item.id)
         numOut = checkoutData.first().numberOut
         if item.processing:
             for i in range(numberReturned):
-                Schema.db.session.add(Schema.Processing(item=item, clientID=clientID))
+                Schema.db.session.add(Schema.Processing(item=item, clientID=clientStudentID))
             item.quantityOut -= numberReturned
             item.quantityInProcessing += numberReturned
         else:  # simply release the item

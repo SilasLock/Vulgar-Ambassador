@@ -84,12 +84,12 @@ def clients():
 
 @GCInv.route("/checkInGear")
 def checkInGear():
-    return render_template("checkOuts.html")
+    return render_template("checkIn.html")
 
 
-@GCInv.route("/checkedOut")
-def checkedOut():
-    return render_template("checkOuts.html")
+# @GCInv.route("/checkedOut")
+# def checkedOut():
+#     return render_template("checkIn.html")
 
 
 @GCInv.route("/mangeInventory", methods=['POST', 'GET'])
