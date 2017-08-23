@@ -37,23 +37,11 @@ function CreateTable(tableID) {
                 "data" : "numberCheckedOut"
             }
         ]
-        // , "initComplete": function() {
-        //     bindModal(dataType);
-        // }
     });
     $("#" + tableID + " tbody").on('click', 'tr', function() {
         getModal(table.row(this).data().id);
     });
     }
-//
-// function makeClientAddPop(){
-//     console.log("clicked");
-//     $.get('/api/makeClientPopUp')
-//     .done(function(data) {
-//             $('#message-model-content').html(data);
-//             $('#user1Message').modal('show');
-//           })}
-//
 function getModal(id) {
     console.log(id);
     $.get('/api/getClientsCheckedoutItems/' + id)
@@ -62,15 +50,13 @@ function getModal(id) {
             setDropDown(data["data"]);
             $('#user1Message').modal('show');
             $('#checkIn').on('click', function () {
-            var checkbox = $(".itemCheckBox input:checkbox")
-            console.log($(checkbox))
+            var checkbox = $(".itemCheckBox input:checkbox");
+            sendData(checkbox, data["ClientID"]);
+            $('#user1Message').modal('toggle');
             })
           });
 }
-//Things that need to be done
-//now we have it so that the we can access the id which is the checkedOut id as well as
-//we need to put together a json response with the values for checkItemIn(self, clientID, Itemid, numberReturned)
-//we also need to grab the numberReturned
+
 
 function setDropDown(data){
     for (var key in data){
@@ -85,10 +71,31 @@ function setNumber(classID, numberSelected, range){
     }
     $select.val(numberSelected)
 }
-function sendData(){
 
+function processForm(checkbox, clientID) {
+    var out = [];
+    for (var index in checkbox){
+        if (checkbox[index].checked){
+            var data = {};
+            data["checkedOutID"] = checkbox[index].id;
+            data["numberReturn"] = $('select.' + checkbox[index].id).val();
+            data["clientID"] = clientID;
+            out.push(data);
+        }
+    }
+    return JSON.stringify(out);
+    }
+
+function sendData(checkbox, clientID){
+    $.ajax({
+      type: "POST",
+      url: "/api/returnItem",
+      data: processForm(checkbox, clientID),
+      success: function() {
+                console.log("success");
+            },
+      dataType: "json",
+      contentType: "json/application"
+    });
 }
 
-/**
- * Created by ajohnson on 7/24/2017.
- */

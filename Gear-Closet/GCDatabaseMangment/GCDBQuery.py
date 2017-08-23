@@ -43,20 +43,20 @@ class inventoryMangment(BaseQuery):
         Schema.db.session.add(checkedOutItem)
         Schema.db.session.commit()
 
-    def checkItemIn(self, clientID, Itemid, numberReturned):#TODO: test me
+    def checkItemIn(self, clientID, checkoutID, numberReturned):#TODO: test me
         """
         will remove row form checkedOut table
         if gear requires processing it will move it into the processing table
         else it will update the inventory table to reflect returned gear
         :return:
         """
-        client = Schema.Client.query.filter_by(id=clientID)
+        client = Schema.Client.query.filter_by(id=clientID).first()
         clientStudentID = client.studentID  # pass a real cleint object
         client.numberCheckedOut -= numberReturned
-        item = Schema.Inventory.query.filter_by(id=Itemid).first()  # gets the item from db
-
-        checkoutData = Schema.checkedOut.query.filter_by(clientCheckoutID=clientStudentID, inventory=item.id)
-        numOut = checkoutData.first().numberOut
+        checkoutQuery = Schema.checkedOut.query.filter_by(clientCheckoutID=clientStudentID, id=checkoutID)
+        checkoutData = checkoutQuery.first()
+        item = Schema.Inventory.query.filter_by(id=checkoutData.inventory).first()  # gets the item from db
+        numOut = checkoutData.numberOut
         if item.processing:
             for i in range(numberReturned):
                 Schema.db.session.add(Schema.Processing(item=item, clientID=clientStudentID))
@@ -66,14 +66,14 @@ class inventoryMangment(BaseQuery):
             item.quantityOut -= numberReturned
             item.quantityAvailable += numberReturned
         if numberReturned == numOut:
-            checkoutData.delete()  # since checkoutData is a query we can delete it here
+            checkoutQuery.delete()  # since checkoutData is a query we can delete it here
         else:
-            checkoutData.first().numberOut -= numberReturned
+            checkoutData.numberOut -= numberReturned
 
         # Sanity checks
-        assert checkoutData.first().numberOut > 0
-        assert item.quantityOut > 0
-        assert item.quantityAvailable > 0
+        assert checkoutData.numberOut >= 0
+        assert item.quantityOut >= 0
+        assert item.quantityAvailable >= 0
 
 
     def processItem(self, Itemid, clientID):

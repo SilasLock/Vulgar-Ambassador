@@ -2,8 +2,7 @@ from flask import request, redirect, url_for, \
     render_template, flash, Blueprint, jsonify, session
 from GCDatabaseMangment.GCDBSchema import db, Inventory, Processing, Client, Category, checkedOut
 from GCDatabaseMangment.InventroyForms import Checkout, CreateClient, HandleItem
-from sqlalchemy import update
-import json
+
 
 InvMangment = Blueprint('InvMangment', __name__, template_folder='templates')
 
@@ -131,6 +130,7 @@ def getClientPopUp():
     elif request.method == 'GET':  # this route should only be called internally
         return render_template("modals/createClientPopUp.html", form=form)
 
+
 @InvMangment.route("/getClientsCheckedoutItems/<int:Clientid>")
 def getClientsCheckedoutItems(Clientid):
     client = Client.query.filter_by(id=Clientid).first()
@@ -139,20 +139,30 @@ def getClientsCheckedoutItems(Clientid):
     for item in itemsOut:
         inventoryData = Inventory.query.filter_by(id=item.inventory).first()
         d = {
-            "itemName" : inventoryData.itemName,
-            "numCheckedOut" : item.numberOut,
-            "CheckoutID":item.id,
-            "ClientID":Clientid,
-            "InventoryID":inventoryData.id
+            "itemName": inventoryData.itemName,
+            "numCheckedOut": item.numberOut,
+            "CheckoutID": item.id,
+            "ClientID": Clientid,
+            "InventoryID": inventoryData.id
             # we are using checkout id here so that we dont have to deal with process items
             # that have the same inv id but are dif checkout entries
         }
         itemsOutDictList += [d]
-    print(itemsOutDictList)
-    print(itemsOut)
+    # print(itemsOutDictList)
+    # print(itemsOut)
     return jsonify(html=render_template("modals/CheckInModal.html", items=itemsOutDictList, name=client.name),
-                   data=itemsOutDictList)
+                   data=itemsOutDictList, ClientID=Clientid)
 
+
+@InvMangment.route("/returnItem", methods=['POST'])
+def returnItem():
+    # This should prob be apart of the getClientsCheckedoutItems function
+    response = request.get_json(force=True)
+    message = "You successful returned: " # TODO: Add message flash here
+    for item in response:
+        Inventory.query.checkItemIn(int(item['clientID']), int(item['checkedOutID']), int(item['numberReturn']))
+    db.session.commit()
+    return jsonify(result="sucess")
 
 
 
